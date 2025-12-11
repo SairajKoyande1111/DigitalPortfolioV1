@@ -47,23 +47,37 @@ const categoryNames: Record<string, string> = {
 };
 
 const brands: Brand[] = [
-  { id: "spice-garden", categoryId: "restaurant", name: "Spice Garden", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/spicegarden" },
-  { id: "ocean-bites", categoryId: "restaurant", name: "Ocean Bites", imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/oceanbites" },
-  { id: "urban-kitchen", categoryId: "restaurant", name: "Urban Kitchen", imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/urbankitchen" },
-  { id: "dream-homes", categoryId: "real-estate", name: "Dream Homes", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/dreamhomes" },
-  { id: "prime-properties", categoryId: "real-estate", name: "Prime Properties", imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/primeproperties" },
-  { id: "care-plus", categoryId: "healthcare", name: "Care Plus Clinic", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/careplusclinic" },
-  { id: "wellness-hub", categoryId: "healthcare", name: "Wellness Hub", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/wellnesshub" },
-  { id: "little-stars", categoryId: "preschools", name: "Little Stars Academy", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/littlestarsacademy" },
-  { id: "tiny-tots", categoryId: "preschools", name: "Tiny Tots Preschool", imageUrl: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/tinytots" },
-  { id: "grand-resort", categoryId: "hospitality", name: "Grand Resort", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/grandresort" },
-  { id: "luxury-stays", categoryId: "hospitality", name: "Luxury Stays", imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/luxurystays" },
-  { id: "glow-beauty", categoryId: "skincare", name: "Glow Beauty", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/glowbeauty" },
-  { id: "pure-skin", categoryId: "skincare", name: "Pure Skin Clinic", imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/pureskinclinic" },
-  { id: "fitzone", categoryId: "gyms", name: "FitZone", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/fitzone" },
-  { id: "power-gym", categoryId: "gyms", name: "Power Gym", imageUrl: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/powergym" },
-  { id: "style-studio", categoryId: "salon", name: "Style Studio", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/stylestudio" },
-  { id: "glamour-salon", categoryId: "salon", name: "Glamour Salon", imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/glamoursalon" },
+  // Restaurants
+  { id: "south-stories", categoryId: "restaurant", name: "South Stories", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/southstoriesindia" },
+  { id: "vivi-all-day-bistro", categoryId: "restaurant", name: "Vivi All Day Bistro", imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/vivialldaybistro" },
+  { id: "blah-bombay", categoryId: "restaurant", name: "Blah Bombay", imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/blahbombay/" },
+  { id: "shipras-restaurant", categoryId: "restaurant", name: "Shipra's Restaurant", imageUrl: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/shiprasrestaurant?igsh=MW5vMTBzcnppYnpu" },
+  
+  // Real Estate
+  { id: "ora-makers", categoryId: "real-estate", name: "Ora Makers", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/ora_makers" },
+  { id: "swarnima-era", categoryId: "real-estate", name: "Swarnima Era", imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/swarnimaera" },
+  { id: "newtown-bilaspur", categoryId: "real-estate", name: "Newtown", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/newtown.bilaspur" },
+  
+  // Healthcare
+  { id: "gplus-heart-hospital", categoryId: "healthcare", name: "G Plus Heart Hospital", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/gplushearthospital" },
+  { id: "moksha-skin-hair", categoryId: "healthcare", name: "Moksha Skin and Hair Clinic", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/moksha.skin.hair.clinic" },
+  { id: "spinex-clinic", categoryId: "healthcare", name: "SpineX Physiotherapy Clinic", imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/spinex_clinic" },
+  { id: "manek-skin-clinic", categoryId: "healthcare", name: "Manek Skin Clinic", imageUrl: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/manekskinclinic" },
+  
+  // Pre-Schools
+  { id: "kangaroo-kids", categoryId: "preschools", name: "Kangaroo Kids", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/kangaroo_kids_kalyan" },
+  
+  // Hospitality
+  { id: "triveni-banquet", categoryId: "hospitality", name: "Triveni Banquet", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/trivenibanquet" },
+  
+  // Skincare
+  { id: "serenade-naturals", categoryId: "skincare", name: "Serenade Naturals", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/serenadenaturals" },
+  
+  // Gyms
+  { id: "train-with-winston", categoryId: "gyms", name: "Train with Winston", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/train_with_winston?igsh=Nzdld3FydWdkYzdp" },
+  
+  // Salon
+  { id: "solastaa-salon", categoryId: "salon", name: "Solastaa Salon", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/solastaa.salon" },
 ];
 
 export default function DigitalMarketingBrands() {

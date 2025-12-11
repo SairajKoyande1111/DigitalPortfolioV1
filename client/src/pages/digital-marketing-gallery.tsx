@@ -3,6 +3,14 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import restaurantsImage from "@assets/1_1765457400298.png";
+import realEstateImage from "@assets/2_1765457400298.png";
+import healthcareImage from "@assets/3_1765457400298.png";
+import preschoolsImage from "@assets/4_1765457400299.png";
+import skincareImage from "@assets/5_1765457400299.png";
+import gymsImage from "@assets/6_1765457400300.png";
+import salonsImage from "@assets/7_1765457400300.png";
+import hospitalityImage from "@assets/8_1765457400300.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,14 +42,14 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { id: "restaurant", name: "Restaurant", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop" },
-  { id: "real-estate", name: "Real Estate", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" },
-  { id: "healthcare", name: "Healthcare", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&h=600&fit=crop" },
-  { id: "preschools", name: "Pre Schools", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&h=600&fit=crop" },
-  { id: "hospitality", name: "Hospitality", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" },
-  { id: "skincare", name: "Skincare", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop" },
-  { id: "gyms", name: "Gyms", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop" },
-  { id: "salon", name: "Salon", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop" },
+  { id: "restaurant", name: "Restaurants", imageUrl: restaurantsImage },
+  { id: "real-estate", name: "Real Estate", imageUrl: realEstateImage },
+  { id: "healthcare", name: "Health Care", imageUrl: healthcareImage },
+  { id: "preschools", name: "Pre Schools", imageUrl: preschoolsImage },
+  { id: "hospitality", name: "Hospitality", imageUrl: hospitalityImage },
+  { id: "skincare", name: "Skin Care", imageUrl: skincareImage },
+  { id: "gyms", name: "Gyms", imageUrl: gymsImage },
+  { id: "salon", name: "Salons", imageUrl: salonsImage },
 ];
 
 export default function DigitalMarketingGallery() {
