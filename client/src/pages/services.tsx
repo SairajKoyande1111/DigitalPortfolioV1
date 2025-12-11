@@ -63,7 +63,7 @@ export default function Services() {
           <img 
             src={companyLogo} 
             alt="Airavata Technologies Logo" 
-            className="w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 mx-auto -mb-10 sm:-mb-12 lg:-mb-16"
+            className="w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 mx-auto -mb-6 sm:-mb-8 lg:-mb-10"
           />
           <h1 
             className="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black mb-3"
