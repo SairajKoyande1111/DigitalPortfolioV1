@@ -7,11 +7,13 @@ import NotFound from "@/pages/not-found";
 import Services from "@/pages/services";
 import ProjectsGallery from "@/pages/projects-gallery";
 import ProjectDetails from "@/pages/project-details";
+import DigitalMarketingGallery from "@/pages/digital-marketing-gallery";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Services} />
+      <Route path="/projects/digital-marketing" component={DigitalMarketingGallery} />
       <Route path="/projects/:serviceSlug" component={ProjectsGallery} />
       <Route path="/projects/:serviceSlug/:projectId" component={ProjectDetails} />
       <Route component={NotFound} />
