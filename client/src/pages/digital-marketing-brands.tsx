@@ -3,6 +3,24 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { SiInstagram } from "react-icons/si";
+
+import solastaaLogo from "@assets/image_1765458288537.png";
+import gplusLogo from "@assets/image_1765458319744.png";
+import mokshaLogo from "@assets/image_1765458390096.png";
+import spinexLogo from "@assets/image_1765458434786.png";
+import manekLogo from "@assets/image_1765458467379.png";
+import kangarooLogo from "@assets/image_1765458494060.png";
+import triveniLogo from "@assets/image_1765458541581.png";
+import oraLogo from "@assets/image_1765458576554.png";
+import swarnimaLogo from "@assets/image_1765458606810.png";
+import newtownLogo from "@assets/image_1765458630484.png";
+import serenadeLogo from "@assets/image_1765458655848.png";
+import southstoriesLogo from "@assets/image_1765459028962.png";
+import viviLogo from "@assets/image_1765459090394.png";
+import blahLogo from "@assets/image_1765459113057.png";
+import shiprasLogo from "@assets/image_1765459131739.png";
+import winstonLogo from "@assets/Untitled_design_(17)_1765459193483.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,8 +48,8 @@ const cardVariants = {
 interface Brand {
   id: string;
   categoryId: string;
-  name: string;
-  imageUrl: string;
+  instagramHandle: string;
+  logoUrl: string;
   instagramUrl: string;
 }
 
@@ -47,37 +65,37 @@ const categoryNames: Record<string, string> = {
 };
 
 const brands: Brand[] = [
-  // Restaurants
-  { id: "south-stories", categoryId: "restaurant", name: "South Stories", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/southstoriesindia" },
-  { id: "vivi-all-day-bistro", categoryId: "restaurant", name: "Vivi All Day Bistro", imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/vivialldaybistro" },
-  { id: "blah-bombay", categoryId: "restaurant", name: "Blah Bombay", imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/blahbombay/" },
-  { id: "shipras-restaurant", categoryId: "restaurant", name: "Shipra's Restaurant", imageUrl: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/shiprasrestaurant?igsh=MW5vMTBzcnppYnpu" },
-  
-  // Real Estate
-  { id: "ora-makers", categoryId: "real-estate", name: "Ora Makers", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/ora_makers" },
-  { id: "swarnima-era", categoryId: "real-estate", name: "Swarnima Era", imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/swarnimaera" },
-  { id: "newtown-bilaspur", categoryId: "real-estate", name: "Newtown", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/newtown.bilaspur" },
+  // Salon
+  { id: "solastaa-salon", categoryId: "salon", instagramHandle: "solastaa.salon", logoUrl: solastaaLogo, instagramUrl: "https://www.instagram.com/solastaa.salon" },
   
   // Healthcare
-  { id: "gplus-heart-hospital", categoryId: "healthcare", name: "G Plus Heart Hospital", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/gplushearthospital" },
-  { id: "moksha-skin-hair", categoryId: "healthcare", name: "Moksha Skin and Hair Clinic", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/moksha.skin.hair.clinic" },
-  { id: "spinex-clinic", categoryId: "healthcare", name: "SpineX Physiotherapy Clinic", imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/spinex_clinic" },
-  { id: "manek-skin-clinic", categoryId: "healthcare", name: "Manek Skin Clinic", imageUrl: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/manekskinclinic" },
+  { id: "gplus-heart-hospital", categoryId: "healthcare", instagramHandle: "gplushearthospital", logoUrl: gplusLogo, instagramUrl: "https://www.instagram.com/gplushearthospital" },
+  { id: "moksha-skin-hair", categoryId: "healthcare", instagramHandle: "moksha.skin.hair.clinic", logoUrl: mokshaLogo, instagramUrl: "https://www.instagram.com/moksha.skin.hair.clinic" },
+  { id: "spinex-clinic", categoryId: "healthcare", instagramHandle: "spinex_clinic", logoUrl: spinexLogo, instagramUrl: "https://www.instagram.com/spinex_clinic" },
+  { id: "manek-skin-clinic", categoryId: "healthcare", instagramHandle: "manekskinclinic", logoUrl: manekLogo, instagramUrl: "https://www.instagram.com/manekskinclinic" },
   
   // Pre-Schools
-  { id: "kangaroo-kids", categoryId: "preschools", name: "Kangaroo Kids", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/kangaroo_kids_kalyan" },
+  { id: "kangaroo-kids", categoryId: "preschools", instagramHandle: "kangaroo_kids_kalyan", logoUrl: kangarooLogo, instagramUrl: "https://www.instagram.com/kangaroo_kids_kalyan" },
   
   // Hospitality
-  { id: "triveni-banquet", categoryId: "hospitality", name: "Triveni Banquet", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/trivenibanquet" },
+  { id: "triveni-banquet", categoryId: "hospitality", instagramHandle: "trivenibanquet", logoUrl: triveniLogo, instagramUrl: "https://www.instagram.com/trivenibanquet" },
+  
+  // Real Estate
+  { id: "ora-makers", categoryId: "real-estate", instagramHandle: "ora_makers", logoUrl: oraLogo, instagramUrl: "https://www.instagram.com/ora_makers" },
+  { id: "swarnima-era", categoryId: "real-estate", instagramHandle: "swarnimaera", logoUrl: swarnimaLogo, instagramUrl: "https://www.instagram.com/swarnimaera" },
+  { id: "newtown-bilaspur", categoryId: "real-estate", instagramHandle: "newtown.bilaspur", logoUrl: newtownLogo, instagramUrl: "https://www.instagram.com/newtown.bilaspur" },
   
   // Skincare
-  { id: "serenade-naturals", categoryId: "skincare", name: "Serenade Naturals", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/serenadenaturals" },
+  { id: "serenade-naturals", categoryId: "skincare", instagramHandle: "serenadenaturals", logoUrl: serenadeLogo, instagramUrl: "https://www.instagram.com/serenadenaturals" },
+  
+  // Restaurants
+  { id: "south-stories", categoryId: "restaurant", instagramHandle: "southstoriesindia", logoUrl: southstoriesLogo, instagramUrl: "https://www.instagram.com/southstoriesindia" },
+  { id: "vivi-all-day-bistro", categoryId: "restaurant", instagramHandle: "vivialldaybistro", logoUrl: viviLogo, instagramUrl: "https://www.instagram.com/vivialldaybistro" },
+  { id: "blah-bombay", categoryId: "restaurant", instagramHandle: "blahbombay", logoUrl: blahLogo, instagramUrl: "https://www.instagram.com/blahbombay" },
+  { id: "shipras-restaurant", categoryId: "restaurant", instagramHandle: "shiprasrestaurant", logoUrl: shiprasLogo, instagramUrl: "https://www.instagram.com/shiprasrestaurant" },
   
   // Gyms
-  { id: "train-with-winston", categoryId: "gyms", name: "Train with Winston", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/train_with_winston?igsh=Nzdld3FydWdkYzdp" },
-  
-  // Salon
-  { id: "solastaa-salon", categoryId: "salon", name: "Solastaa Salon", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop", instagramUrl: "https://www.instagram.com/solastaa.salon" },
+  { id: "train-with-winston", categoryId: "gyms", instagramHandle: "train_with_winston", logoUrl: winstonLogo, instagramUrl: "https://www.instagram.com/train_with_winston" },
 ];
 
 export default function DigitalMarketingBrands() {
@@ -150,31 +168,34 @@ export default function DigitalMarketingBrands() {
         >
           {filteredBrands.map((brand) => (
             <motion.div key={brand.id} variants={cardVariants}>
-              <a 
-                href={brand.instagramUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Card
+                className="overflow-hidden"
+                data-testid={`brand-card-${brand.id}`}
               >
-                <Card
-                  className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                  data-testid={`brand-card-${brand.id}`}
+                <a 
+                  href={brand.instagramUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block cursor-pointer"
                 >
-                  <div className="relative aspect-square overflow-hidden">
-                    <img
-                      src={brand.imageUrl}
-                      alt={brand.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-lg font-bold text-white">
-                        {brand.name}
-                      </h3>
-                    </div>
-                  </div>
-                </Card>
-              </a>
+                  <img
+                    src={brand.logoUrl}
+                    alt={brand.instagramHandle}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </a>
+                <a 
+                  href={brand.instagramUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 p-3 cursor-pointer hover-elevate"
+                  data-testid={`instagram-link-${brand.id}`}
+                >
+                  <SiInstagram className="w-5 h-5 text-pink-600" />
+                  <span className="text-sm text-muted-foreground">@{brand.instagramHandle}</span>
+                </a>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
