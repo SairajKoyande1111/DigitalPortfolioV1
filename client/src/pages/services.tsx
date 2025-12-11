@@ -86,15 +86,14 @@ export default function Services() {
                 <motion.div key={service.id} variants={cardVariants}>
                   <Link href={`/projects/${service.slug}`}>
                     <div
-                      className="group relative cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1"
+                      className="cursor-pointer rounded-lg"
                       data-testid={`image-service-${service.id}`}
                     >
                       <img
                         src={serviceImage}
                         alt={service.title}
-                        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-auto object-cover rounded-lg"
                       />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                     </div>
                   </Link>
                 </motion.div>
