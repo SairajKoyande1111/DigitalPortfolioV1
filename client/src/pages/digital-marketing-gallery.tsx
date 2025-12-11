@@ -3,14 +3,14 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import restaurantsImage from "@assets/1_1765457400298.png";
-import realEstateImage from "@assets/2_1765457400298.png";
-import healthcareImage from "@assets/3_1765457400298.png";
-import preschoolsImage from "@assets/4_1765457400299.png";
-import skincareImage from "@assets/5_1765457400299.png";
-import gymsImage from "@assets/6_1765457400300.png";
-import salonsImage from "@assets/7_1765457400300.png";
-import hospitalityImage from "@assets/8_1765457400300.png";
+import restaurantsImage from "@assets/1_1765462901309.png";
+import realEstateImage from "@assets/2_1765462901310.png";
+import healthcareImage from "@assets/3_1765462901310.png";
+import preschoolsImage from "@assets/4_1765462901310.png";
+import skincareImage from "@assets/5_1765462901310.png";
+import gymsImage from "@assets/6_1765462901311.png";
+import salonsImage from "@assets/7_1765462901313.png";
+import hospitalityImage from "@assets/8_1765462901314.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
