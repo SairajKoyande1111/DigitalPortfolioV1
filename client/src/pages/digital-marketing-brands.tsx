@@ -3,8 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
-import { SiInstagram } from "react-icons/si";
 
+import instagramLogo from "@assets/image_1765459832551.png";
 import solastaaLogo from "@assets/image_1765458288537.png";
 import gplusLogo from "@assets/image_1765458319744.png";
 import mokshaLogo from "@assets/image_1765458390096.png";
@@ -107,9 +107,9 @@ export default function DigitalMarketingBrands() {
 
   if (filteredBrands.length === 0) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-white dark:bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-semibold text-foreground mb-4">
+          <h1 className="text-2xl font-semibold text-black dark:text-black mb-4">
             No brands found in this category
           </h1>
           <Link href="/projects/digital-marketing">
@@ -124,23 +124,28 @@ export default function DigitalMarketingBrands() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white dark:bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
+          className="flex items-center justify-between mb-8"
         >
           <Link href="/projects/digital-marketing">
             <Button
               variant="ghost"
-              className="mb-6 -ml-2 text-muted-foreground"
+              size="icon"
+              className="text-black dark:text-black"
               data-testid="button-back-categories"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Categories
+              <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black dark:text-black">
+            AIRAVATA TECHNOLOGIES
+          </h1>
+          <div className="w-9" />
         </motion.div>
 
         <motion.div
@@ -149,13 +154,10 @@ export default function DigitalMarketingBrands() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-foreground mb-3">
-            AIRAVATA TECHNOLOGIES
-          </h1>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-foreground mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black dark:text-black mb-3">
             {categoryName}
           </h2>
-          <p className="text-sm sm:text-lg lg:text-xl text-muted-foreground">
+          <p className="text-sm sm:text-lg lg:text-xl text-gray-600 dark:text-gray-600">
             Our Brand Partners in {categoryName} Industry
           </p>
         </motion.div>
@@ -169,7 +171,7 @@ export default function DigitalMarketingBrands() {
           {filteredBrands.map((brand) => (
             <motion.div key={brand.id} variants={cardVariants}>
               <Card
-                className="overflow-hidden"
+                className="overflow-hidden border-0 shadow-none bg-white dark:bg-white"
                 data-testid={`brand-card-${brand.id}`}
               >
                 <a 
@@ -189,11 +191,11 @@ export default function DigitalMarketingBrands() {
                   href={brand.instagramUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 p-3 cursor-pointer hover-elevate"
+                  className="flex items-center justify-center gap-2 p-3 cursor-pointer"
                   data-testid={`instagram-link-${brand.id}`}
                 >
-                  <SiInstagram className="w-5 h-5 text-pink-600" />
-                  <span className="text-sm text-muted-foreground">@{brand.instagramHandle}</span>
+                  <img src={instagramLogo} alt="Instagram" className="w-5 h-5" />
+                  <span className="text-sm text-black dark:text-black">@{brand.instagramHandle}</span>
                 </a>
               </Card>
             </motion.div>

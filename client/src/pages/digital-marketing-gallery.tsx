@@ -54,23 +54,28 @@ const categories: Category[] = [
 
 export default function DigitalMarketingGallery() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white dark:bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
+          className="flex items-center justify-between mb-8"
         >
           <Link href="/">
             <Button
               variant="ghost"
-              className="mb-6 -ml-2 text-muted-foreground"
+              size="icon"
+              className="text-black dark:text-black"
               data-testid="button-back-services"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Services
+              <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black dark:text-black">
+            AIRAVATA TECHNOLOGIES
+          </h1>
+          <div className="w-9" />
         </motion.div>
 
         <motion.div
@@ -79,13 +84,10 @@ export default function DigitalMarketingGallery() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-foreground mb-3">
-            AIRAVATA TECHNOLOGIES
-          </h1>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-foreground mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black dark:text-black mb-3">
             Digital Marketing Portfolio
           </h2>
-          <p className="text-sm sm:text-lg lg:text-xl text-muted-foreground">
+          <p className="text-sm sm:text-lg lg:text-xl text-gray-600 dark:text-gray-600">
             Driving Brand Growth Through Strategic Digital Campaigns
           </p>
         </motion.div>
@@ -100,7 +102,7 @@ export default function DigitalMarketingGallery() {
             <motion.div key={category.id} variants={cardVariants}>
               <Link href={`/digital-marketing/${category.id}`}>
                 <Card
-                  className="overflow-hidden cursor-pointer"
+                  className="overflow-hidden cursor-pointer border-0 shadow-none bg-white dark:bg-white"
                   data-testid={`category-card-${category.id}`}
                 >
                   <img
