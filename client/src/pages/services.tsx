@@ -61,15 +61,15 @@ export default function Services() {
           style={{ background: 'linear-gradient(90deg, #3480cb, #52b9fd)' }}
         >
           <h1 
-            className="text-lg sm:text-xl lg:text-2xl font-light tracking-[0.3em] text-white mb-4"
+            className="text-sm sm:text-lg lg:text-xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-white mb-4"
           >
-            A I R A V A T A &nbsp;&nbsp;&nbsp; T E C H N O L O G I E S
+            AIRAVATA TECHNOLOGIES
           </h1>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Our Services
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-4">
+            Digital Portfolio
           </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
-            Transforming ideas into digital excellence
+          <p className="text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed">
+            Transforming Business Through<br />Innovative Technology
           </p>
         </motion.div>
 
