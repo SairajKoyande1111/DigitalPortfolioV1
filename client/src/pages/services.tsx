@@ -52,13 +52,13 @@ export default function Services() {
   });
 
   return (
-    <div className="min-h-screen bg-white py-4 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-1 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="py-4 mb-6 text-center"
+          className="py-1 mb-4 text-center"
         >
           <img 
             src={companyLogo} 
