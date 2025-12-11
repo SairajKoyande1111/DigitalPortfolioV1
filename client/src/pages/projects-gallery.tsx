@@ -76,43 +76,47 @@ export default function ProjectsGallery() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div className="min-h-screen bg-white dark:bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mb-8"
+          className="flex items-center justify-between mb-8"
         >
           <Link href="/">
             <Button
               variant="ghost"
-              className="mb-6 -ml-2 text-muted-foreground hover:text-foreground"
+              size="icon"
+              className="text-black dark:text-black"
               data-testid="button-back-services"
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Services
+              <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
+          <h1 className="text-lg sm:text-xl lg:text-2xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black dark:text-black">
+            AIRAVATA TECHNOLOGIES
+          </h1>
+          <div className="w-9" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-12"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-10"
         >
           {isLoading ? (
             <>
-              <Skeleton className="h-12 w-80 mb-3" />
-              <Skeleton className="h-6 w-96" />
+              <Skeleton className="h-12 w-80 mb-3 mx-auto" />
+              <Skeleton className="h-6 w-96 mx-auto" />
             </>
           ) : (
             <>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-3">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black dark:text-black mb-3">
                 {service?.title}
-              </h1>
-              <p className="text-lg text-muted-foreground">
+              </h2>
+              <p className="text-sm sm:text-lg lg:text-xl text-gray-600 dark:text-gray-600">
                 Explore our portfolio of {service?.title.toLowerCase()} projects
               </p>
             </>
