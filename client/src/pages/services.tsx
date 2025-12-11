@@ -51,18 +51,24 @@ export default function Services() {
   });
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="rounded-lg p-8 mb-12 text-center"
+          style={{ background: 'linear-gradient(90deg, #3480cb, #52b9fd)' }}
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            Our Services
+          <h1 
+            className="text-lg sm:text-xl lg:text-2xl font-light tracking-[0.3em] text-white mb-4"
+          >
+            A I R A V A T A &nbsp;&nbsp;&nbsp; T E C H N O L O G I E S
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Our Services
+          </h2>
+          <p className="text-lg text-white max-w-2xl mx-auto">
             Transforming ideas into digital excellence
           </p>
         </motion.div>
