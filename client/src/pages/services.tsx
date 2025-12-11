@@ -8,6 +8,7 @@ import websiteDevImg from "@assets/2_1765447271354.png";
 import mobileAppImg from "@assets/3_1765447271355.png";
 import softwareDevImg from "@assets/4_1765447271355.png";
 import digitalMarketingImg from "@assets/5_1765447271356.png";
+import companyLogo from "@assets/ATLOGOPNGNOBG_1765463495567.png";
 
 const imageMap: Record<string, string> = {
   "website-development": websiteDevImg,
@@ -59,6 +60,11 @@ export default function Services() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="py-4 mb-6 text-center"
         >
+          <img 
+            src={companyLogo} 
+            alt="Airavata Technologies Logo" 
+            className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3"
+          />
           <h1 
             className="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black mb-3"
           >
