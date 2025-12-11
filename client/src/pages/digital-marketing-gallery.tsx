@@ -100,23 +100,15 @@ export default function DigitalMarketingGallery() {
             <motion.div key={category.id} variants={cardVariants}>
               <Link href={`/digital-marketing/${category.id}`}>
                 <Card
-                  className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="overflow-hidden cursor-pointer"
                   data-testid={`category-card-${category.id}`}
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={category.imageUrl}
-                      alt={category.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-xl font-bold text-white">
-                        {category.name}
-                      </h3>
-                    </div>
-                  </div>
+                  <img
+                    src={category.imageUrl}
+                    alt={category.name}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
                 </Card>
               </Link>
             </motion.div>
