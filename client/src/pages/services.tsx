@@ -57,19 +57,18 @@ export default function Services() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="rounded-lg p-8 mb-12 text-center"
-          style={{ background: 'linear-gradient(90deg, #3480cb, #52b9fd)' }}
+          className="p-8 mb-12 text-center"
         >
           <h1 
-            className="text-sm sm:text-lg lg:text-xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-white mb-4"
+            className="text-sm sm:text-lg lg:text-xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black mb-4"
           >
             AIRAVATA TECHNOLOGIES
           </h1>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black mb-4">
             Digital Portfolio
           </h2>
-          <p className="text-base sm:text-lg text-white max-w-2xl mx-auto leading-relaxed">
-            Transforming Business Through<br />Innovative Technology
+          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto">
+            Transforming Business Through Innovative Technology
           </p>
         </motion.div>
 
