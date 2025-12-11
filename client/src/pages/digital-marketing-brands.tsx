@@ -32,7 +32,7 @@ interface Brand {
   categoryId: string;
   name: string;
   imageUrl: string;
-  reelCount: number;
+  instagramUrl: string;
 }
 
 const categoryNames: Record<string, string> = {
@@ -47,23 +47,23 @@ const categoryNames: Record<string, string> = {
 };
 
 const brands: Brand[] = [
-  { id: "spice-garden", categoryId: "restaurant", name: "Spice Garden", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop", reelCount: 5 },
-  { id: "ocean-bites", categoryId: "restaurant", name: "Ocean Bites", imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop", reelCount: 3 },
-  { id: "urban-kitchen", categoryId: "restaurant", name: "Urban Kitchen", imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop", reelCount: 4 },
-  { id: "dream-homes", categoryId: "real-estate", name: "Dream Homes", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop", reelCount: 6 },
-  { id: "prime-properties", categoryId: "real-estate", name: "Prime Properties", imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=400&fit=crop", reelCount: 4 },
-  { id: "care-plus", categoryId: "healthcare", name: "Care Plus Clinic", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop", reelCount: 3 },
-  { id: "wellness-hub", categoryId: "healthcare", name: "Wellness Hub", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop", reelCount: 5 },
-  { id: "little-stars", categoryId: "preschools", name: "Little Stars Academy", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=400&fit=crop", reelCount: 4 },
-  { id: "tiny-tots", categoryId: "preschools", name: "Tiny Tots Preschool", imageUrl: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop", reelCount: 3 },
-  { id: "grand-resort", categoryId: "hospitality", name: "Grand Resort", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop", reelCount: 7 },
-  { id: "luxury-stays", categoryId: "hospitality", name: "Luxury Stays", imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=400&fit=crop", reelCount: 5 },
-  { id: "glow-beauty", categoryId: "skincare", name: "Glow Beauty", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop", reelCount: 6 },
-  { id: "pure-skin", categoryId: "skincare", name: "Pure Skin Clinic", imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop", reelCount: 4 },
-  { id: "fitzone", categoryId: "gyms", name: "FitZone", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop", reelCount: 8 },
-  { id: "power-gym", categoryId: "gyms", name: "Power Gym", imageUrl: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop", reelCount: 5 },
-  { id: "style-studio", categoryId: "salon", name: "Style Studio", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop", reelCount: 6 },
-  { id: "glamour-salon", categoryId: "salon", name: "Glamour Salon", imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop", reelCount: 4 },
+  { id: "spice-garden", categoryId: "restaurant", name: "Spice Garden", imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/spicegarden" },
+  { id: "ocean-bites", categoryId: "restaurant", name: "Ocean Bites", imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/oceanbites" },
+  { id: "urban-kitchen", categoryId: "restaurant", name: "Urban Kitchen", imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/urbankitchen" },
+  { id: "dream-homes", categoryId: "real-estate", name: "Dream Homes", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/dreamhomes" },
+  { id: "prime-properties", categoryId: "real-estate", name: "Prime Properties", imageUrl: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/primeproperties" },
+  { id: "care-plus", categoryId: "healthcare", name: "Care Plus Clinic", imageUrl: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/careplusclinic" },
+  { id: "wellness-hub", categoryId: "healthcare", name: "Wellness Hub", imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/wellnesshub" },
+  { id: "little-stars", categoryId: "preschools", name: "Little Stars Academy", imageUrl: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/littlestarsacademy" },
+  { id: "tiny-tots", categoryId: "preschools", name: "Tiny Tots Preschool", imageUrl: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/tinytots" },
+  { id: "grand-resort", categoryId: "hospitality", name: "Grand Resort", imageUrl: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/grandresort" },
+  { id: "luxury-stays", categoryId: "hospitality", name: "Luxury Stays", imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/luxurystays" },
+  { id: "glow-beauty", categoryId: "skincare", name: "Glow Beauty", imageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/glowbeauty" },
+  { id: "pure-skin", categoryId: "skincare", name: "Pure Skin Clinic", imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/pureskinclinic" },
+  { id: "fitzone", categoryId: "gyms", name: "FitZone", imageUrl: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/fitzone" },
+  { id: "power-gym", categoryId: "gyms", name: "Power Gym", imageUrl: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/powergym" },
+  { id: "style-studio", categoryId: "salon", name: "Style Studio", imageUrl: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/stylestudio" },
+  { id: "glamour-salon", categoryId: "salon", name: "Glamour Salon", imageUrl: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=400&fit=crop", instagramUrl: "https://instagram.com/glamoursalon" },
 ];
 
 export default function DigitalMarketingBrands() {
@@ -136,7 +136,11 @@ export default function DigitalMarketingBrands() {
         >
           {filteredBrands.map((brand) => (
             <motion.div key={brand.id} variants={cardVariants}>
-              <Link href={`/digital-marketing/${categoryId}/${brand.id}`}>
+              <a 
+                href={brand.instagramUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Card
                   className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                   data-testid={`brand-card-${brand.id}`}
@@ -150,16 +154,13 @@ export default function DigitalMarketingBrands() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-lg font-bold text-white mb-1">
+                      <h3 className="text-lg font-bold text-white">
                         {brand.name}
                       </h3>
-                      <p className="text-sm text-white/80">
-                        {brand.reelCount} Reels
-                      </p>
                     </div>
                   </div>
                 </Card>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </motion.div>
