@@ -67,7 +67,7 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black mb-3">
             Digital Portfolio
           </h2>
-          <p className="text-lg sm:text-xl text-black max-w-2xl mx-auto">
+          <p className="text-sm sm:text-lg lg:text-xl text-black whitespace-nowrap">
             Transforming Business Through Innovative Technology
           </p>
         </motion.div>
