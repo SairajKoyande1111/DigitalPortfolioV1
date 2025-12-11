@@ -51,23 +51,23 @@ export default function Services() {
   });
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="p-8 mb-12 text-center"
+          className="py-4 mb-6 text-center"
         >
           <h1 
-            className="text-sm sm:text-lg lg:text-xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black mb-4"
+            className="text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.15em] sm:tracking-[0.2em] text-black mb-3"
           >
             AIRAVATA TECHNOLOGIES
           </h1>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black mb-3">
             Digital Portfolio
           </h2>
-          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-black max-w-2xl mx-auto">
             Transforming Business Through Innovative Technology
           </p>
         </motion.div>
