@@ -161,7 +161,7 @@ export default function ProjectsGallery() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors text-center">
                         {project.name}
                       </h3>
                     </div>

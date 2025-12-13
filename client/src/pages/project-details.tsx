@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -73,6 +73,23 @@ interface ImageLightboxProps {
 }
 
 function ImageLightbox({ images, currentIndex, isOpen, onClose, onNext, onPrev, projectName }: ImageLightboxProps) {
+  useEffect(() => {
+    if (!isOpen) return;
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        onPrev();
+      } else if (e.key === "ArrowRight") {
+        onNext();
+      } else if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onNext, onPrev, onClose]);
+  
   if (!isOpen) return null;
   
   return (
@@ -81,45 +98,50 @@ function ImageLightbox({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+        className="fixed inset-0 z-50 bg-black/95"
         onClick={onClose}
       >
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/30 z-50 h-12 w-12"
-          onClick={onClose}
+          className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/30 z-50 h-12 w-12 rounded-full"
+          onClick={(e) => { e.stopPropagation(); onClose(); }}
           data-testid="button-close-lightbox"
         >
-          <X className="w-8 h-8" />
+          <X className="w-6 h-6" />
         </Button>
         
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-14 w-14"
-          onClick={(e) => { e.stopPropagation(); onPrev(); }}
-          data-testid="button-prev-image"
-        >
-          <ChevronLeft className="w-10 h-10" />
-        </Button>
+        {images.length > 1 && (
+          <>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
+              onClick={(e) => { e.stopPropagation(); onPrev(); }}
+              data-testid="button-prev-image"
+            >
+              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+            </Button>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
+              onClick={(e) => { e.stopPropagation(); onNext(); }}
+              data-testid="button-next-image"
+            >
+              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+            </Button>
+          </>
+        )}
         
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-14 w-14"
-          onClick={(e) => { e.stopPropagation(); onNext(); }}
-          data-testid="button-next-image"
-        >
-          <ChevronRight className="w-10 h-10" />
-        </Button>
-        
-        <div className="flex items-center justify-center w-full h-full px-20 md:px-24 py-16">
+        <div className="flex items-center justify-center w-full h-full p-4 sm:p-8 pt-16 pb-16">
           <motion.img
             key={currentIndex}
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
             src={images[currentIndex]}
             alt={`${projectName} - Image ${currentIndex + 1}`}
             className="max-w-full max-h-full object-contain"
@@ -127,7 +149,7 @@ function ImageLightbox({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
           />
         </div>
         
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-base bg-black/50 px-4 py-2 rounded-full">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
           {currentIndex + 1} / {images.length}
         </div>
       </motion.div>
@@ -248,7 +270,7 @@ export default function ProjectDetails() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <h1
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-black tracking-tight leading-tight whitespace-nowrap"
+                className="text-xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-black tracking-tight leading-tight text-center break-words"
                 data-testid="text-project-name"
               >
                 {project?.name}
@@ -359,7 +381,7 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <p className="text-xl text-black dark:text-black leading-relaxed w-full">
+              <p className="text-xl text-black dark:text-black leading-relaxed w-full text-justify">
                 {project?.fullDescription}
               </p>
             </motion.section>
@@ -584,7 +606,7 @@ export default function ProjectDetails() {
                         key={index}
                         className="border border-gray-200 rounded-md overflow-hidden"
                       >
-                        <div className="p-4 bg-gray-50 dark:bg-gray-50 border-b border-gray-200">
+                        <div className="p-4 border-b border-gray-200">
                           <div className="flex items-start gap-3">
                             <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                             <div>
@@ -622,25 +644,6 @@ export default function ProjectDetails() {
               </div>
             </motion.section>
 
-            {/* Back Button */}
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="pt-8"
-            >
-              <Link href={`/projects/${serviceSlug}`}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-base"
-                  data-testid="button-view-more-projects"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  View More {service?.title} Projects
-                </Button>
-              </Link>
-            </motion.section>
           </motion.div>
         )}
       </div>
