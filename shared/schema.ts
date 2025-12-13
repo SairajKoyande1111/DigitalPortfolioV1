@@ -232,9 +232,9 @@ export const projects: Project[] = [
   {
     id: "s1",
     serviceId: "3",
-    name: "PRISM - Post-Production Management System",
+    name: "PRISM (Post Production Management System)",
     shortDescription: "Comprehensive studio management software for post-production houses managing film, TV, and advertisement editing workflows.",
-    fullDescription: "PRISM (Post-Production Information & Resource Scheduling Management) is a comprehensive studio management software designed for post-production houses managing film, TV serial, web series, and advertisement editing workflows. The system provides end-to-end management of studio resources, bookings, billing, and conflict resolution with features including centralized booking management with conflict detection, real-time visibility of room and editor availability, automated chalan/invoice generation, and multi-company support for franchise operations.",
+    fullDescription: "PRISM is a comprehensive studio management software designed for post-production houses managing film, TV serial, web series, and advertisement editing workflows. The system provides end-to-end management of studio resources, bookings, billing, and conflict resolution with features including centralized booking management with conflict detection, real-time visibility of room and editor availability, automated chalan/invoice generation, and multi-company support for franchise operations.",
     imageUrl: "/attached_assets/Screenshot_2025-12-13_at_10.13.14_AM_1765600998382.png",
     galleryImages: [
       "/attached_assets/Screenshot_2025-12-13_at_10.14.35_AM_1765601079175.png",
@@ -251,15 +251,27 @@ export const projects: Project[] = [
       "/attached_assets/Screenshot_2025-12-13_at_10.20.19_AM_1765601422310.png",
       "/attached_assets/Screenshot_2025-12-13_at_10.20.36_AM_1765601438975.png"
     ],
-    clientName: "PRISM Studios",
+    clientName: "Vishrani Computech",
     clientIndustry: "Media & Entertainment",
     clientLocation: "Mumbai, India",
     websiteUrl: "#",
     duration: "6 months",
     completedDate: "December 2024",
-    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS", "Shadcn/ui"],
-    features: ["Booking Calendar with Conflict Detection", "Customer & Project Management", "Room & Editor Management", "Chalan/Invoice Generation", "Conflict Resolution Reports", "Role-Based Access Control", "Multi-Company Support", "Real-time Booking Status", "Editor Leave Management", "Comprehensive Reporting Dashboard"],
-    outcomes: ["Streamlined studio operations", "Eliminated scheduling conflicts", "Automated billing workflow", "Multi-location management capability"]
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Shadcn/ui", "AWS", "S3", "JWT Authentication"],
+    features: [
+      "Problem: Manual scheduling caused frequent double-bookings | Solution: Automated booking calendar with real-time conflict detection",
+      "Problem: No visibility into room/editor availability | Solution: Live dashboard showing resource status across all locations",
+      "Problem: Invoice generation was error-prone | Solution: Automated chalan/invoice generation with accurate billing",
+      "Problem: Managing multiple studio locations separately | Solution: Multi-company support with centralized control",
+      "Problem: Tracking editor leave was disorganized | Solution: Integrated leave management with booking impact analysis",
+      "Problem: No standardized access control | Solution: Role-based permissions for different staff levels"
+    ],
+    outcomes: [
+      "Problem: Double-bookings disrupted operations | Result: 100% elimination of scheduling conflicts",
+      "Problem: Hours spent on manual invoicing | Result: 80% reduction in billing processing time",
+      "Problem: No cross-location visibility | Result: Unified management across all studio locations",
+      "Problem: Lost revenue from booking gaps | Result: 35% improvement in studio utilization"
+    ]
   },
 
   // Digital Marketing Projects

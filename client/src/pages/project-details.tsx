@@ -9,11 +9,37 @@ import {
   ExternalLink,
   X,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  AlertTriangle,
+  Lightbulb
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import type { Service, Project } from "@shared/schema";
+import { 
+  SiReact, 
+  SiTypescript, 
+  SiNodedotjs, 
+  SiExpress,
+  SiMysql,
+  SiTailwindcss,
+  SiAmazon,
+  SiAmazons3
+} from "react-icons/si";
+import { Shield, Layers } from "lucide-react";
+
+const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
+  "React": { icon: <SiReact className="w-5 h-5 text-[#61DAFB]" />, category: "Frontend" },
+  "TypeScript": { icon: <SiTypescript className="w-5 h-5 text-[#3178C6]" />, category: "Frontend" },
+  "Tailwind CSS": { icon: <SiTailwindcss className="w-5 h-5 text-[#06B6D4]" />, category: "Frontend" },
+  "Shadcn/ui": { icon: <Layers className="w-5 h-5 text-gray-700" />, category: "Frontend" },
+  "Node.js": { icon: <SiNodedotjs className="w-5 h-5 text-[#339933]" />, category: "Backend" },
+  "Express.js": { icon: <SiExpress className="w-5 h-5 text-gray-700" />, category: "Backend" },
+  "MySQL": { icon: <SiMysql className="w-5 h-5 text-[#4479A1]" />, category: "Database" },
+  "AWS": { icon: <SiAmazon className="w-5 h-5 text-[#FF9900]" />, category: "Deployment" },
+  "S3": { icon: <SiAmazons3 className="w-5 h-5 text-[#569A31]" />, category: "Deployment" },
+  "JWT Authentication": { icon: <Shield className="w-5 h-5 text-green-600" />, category: "Security" },
+};
 
 function ProjectDetailsSkeleton() {
   return (
@@ -213,6 +239,20 @@ export default function ProjectDetails() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-16"
           >
+            {/* Project Title - Moved to Top */}
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+            >
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-black tracking-tight leading-tight"
+                data-testid="text-project-name"
+              >
+                {project?.name}
+              </h1>
+            </motion.section>
+
             {/* Image Gallery - Desktop Layout */}
             <section className="hidden lg:block">
               <div className="grid grid-cols-3 gap-4">
@@ -311,22 +351,13 @@ export default function ProjectDetails() {
               )}
             </section>
 
-            {/* Project Title & Description */}
+            {/* Project Description - Full Width, Black Text */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-6"
             >
-              <div>
-                <h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-tight"
-                  data-testid="text-project-name"
-                >
-                  {project?.name}
-                </h1>
-              </div>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+              <p className="text-xl text-black dark:text-black leading-relaxed w-full">
                 {project?.fullDescription}
               </p>
             </motion.section>
@@ -396,7 +427,7 @@ export default function ProjectDetails() {
 
                 <div className="space-y-1">
                   <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
-                    Website
+                    Deployment
                   </span>
                   {project?.websiteUrl && project.websiteUrl !== "#" ? (
                     <a
@@ -410,7 +441,7 @@ export default function ProjectDetails() {
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
-                    <p className="text-sm font-medium text-gray-500 dark:text-gray-500">
+                    <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
                       Private
                     </p>
                   )}
@@ -420,7 +451,7 @@ export default function ProjectDetails() {
 
             <Separator className="my-8" />
 
-            {/* Technologies Section */}
+            {/* Technology Stack Section */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -430,23 +461,49 @@ export default function ProjectDetails() {
               <div className="max-w-6xl mx-auto">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-900 mb-8 flex items-center gap-3">
                   <span className="w-1 h-8 bg-blue-500 rounded-full" />
-                  Tech Stack
+                  Technology Stack
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-testid="list-technologies">
-                  {(project?.technologies ?? []).map((tech, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 bg-white dark:bg-white p-4 shadow-sm border border-gray-100"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span className="text-base font-medium text-gray-900 dark:text-gray-900">{tech}</span>
-                    </div>
-                  ))}
+                <div data-testid="list-technologies">
+                  {(() => {
+                    const technologies = project?.technologies ?? [];
+                    const categories = ["Frontend", "Backend", "Database", "Deployment", "Security"];
+                    const grouped: Record<string, string[]> = {};
+                    
+                    technologies.forEach(tech => {
+                      const techInfo = techIconMap[tech];
+                      const category = techInfo?.category || "Other";
+                      if (!grouped[category]) grouped[category] = [];
+                      grouped[category].push(tech);
+                    });
+                    
+                    return (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        {categories.filter(cat => grouped[cat]?.length > 0).map(category => (
+                          <div key={category} className="space-y-3">
+                            <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-600 uppercase tracking-wider">
+                              {category}
+                            </h3>
+                            <div className="space-y-2">
+                              {grouped[category].map((tech, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex items-center gap-3 bg-white dark:bg-white p-3 shadow-sm border border-gray-100 rounded-md"
+                                >
+                                  {techIconMap[tech]?.icon || <CheckCircle2 className="w-5 h-5 text-gray-400" />}
+                                  <span className="text-sm font-medium text-gray-900 dark:text-gray-900">{tech}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.section>
 
-            {/* Key Features Section */}
+            {/* Key Features Section - Problem/Solution Format */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -457,22 +514,53 @@ export default function ProjectDetails() {
                 Key Features
               </h2>
               <div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                className="grid grid-cols-1 gap-4"
                 data-testid="list-features"
               >
-                {(project?.features ?? []).map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-50 border-l-4 border-green-500"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-base text-gray-800 dark:text-gray-800 font-medium">{feature}</span>
-                  </div>
-                ))}
+                {(project?.features ?? []).map((feature, index) => {
+                  const hasProblemSolution = feature.includes(" | ");
+                  if (hasProblemSolution) {
+                    const [problem, solution] = feature.split(" | ");
+                    const problemText = problem.replace("Problem: ", "");
+                    const solutionText = solution.replace("Solution: ", "");
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white dark:bg-white border border-gray-200 rounded-md overflow-hidden"
+                      >
+                        <div className="grid grid-cols-1 md:grid-cols-2">
+                          <div className="p-4 bg-red-50 dark:bg-red-50 flex items-start gap-3">
+                            <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <span className="text-xs font-semibold text-red-600 uppercase tracking-wider">Problem</span>
+                              <p className="text-sm text-gray-800 dark:text-gray-800 mt-1">{problemText}</p>
+                            </div>
+                          </div>
+                          <div className="p-4 bg-green-50 dark:bg-green-50 flex items-start gap-3">
+                            <Lightbulb className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Solution</span>
+                              <p className="text-sm text-gray-800 dark:text-gray-800 mt-1">{solutionText}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-50 border border-gray-200 rounded-md"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-base text-gray-800 dark:text-gray-800 font-medium">{feature}</span>
+                    </div>
+                  );
+                })}
               </div>
             </motion.section>
 
-            {/* Project Outcomes Section */}
+            {/* Project Outcomes Section - Problem/Result Format */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -488,19 +576,52 @@ export default function ProjectDetails() {
                   className="grid grid-cols-1 md:grid-cols-2 gap-4"
                   data-testid="list-outcomes"
                 >
-                  {(project?.outcomes ?? []).map((outcome, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-4 p-5 bg-white dark:bg-white shadow-sm border border-indigo-100"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                        <span className="text-indigo-600 font-bold text-sm">{index + 1}</span>
+                  {(project?.outcomes ?? []).map((outcome, index) => {
+                    const hasProblemResult = outcome.includes(" | ");
+                    if (hasProblemResult) {
+                      const [problem, result] = outcome.split(" | ");
+                      const problemText = problem.replace("Problem: ", "");
+                      const resultText = result.replace("Result: ", "");
+                      return (
+                        <div
+                          key={index}
+                          className="bg-white dark:bg-white shadow-sm border border-indigo-100 rounded-md overflow-hidden"
+                        >
+                          <div className="p-4 bg-gray-50 dark:bg-gray-50 border-b border-gray-200">
+                            <div className="flex items-start gap-3">
+                              <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                              <div>
+                                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Challenge</span>
+                                <p className="text-sm text-gray-700 dark:text-gray-700 mt-1">{problemText}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            <div className="flex items-start gap-3">
+                              <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                              <div>
+                                <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Result</span>
+                                <p className="text-sm font-semibold text-gray-900 dark:text-gray-900 mt-1">{resultText}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return (
+                      <div
+                        key={index}
+                        className="flex items-start gap-4 p-5 bg-white dark:bg-white shadow-sm border border-indigo-100 rounded-md"
+                      >
+                        <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                          <span className="text-indigo-600 font-bold text-sm">{index + 1}</span>
+                        </div>
+                        <p className="text-base text-gray-800 dark:text-gray-800 font-medium leading-relaxed">
+                          {outcome}
+                        </p>
                       </div>
-                      <p className="text-base text-gray-800 dark:text-gray-800 font-medium leading-relaxed">
-                        {outcome}
-                      </p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.section>

@@ -164,9 +164,6 @@ export default function ProjectsGallery() {
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors">
                         {project.name}
                       </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-600 line-clamp-2 leading-relaxed">
-                        {project.shortDescription}
-                      </p>
                     </div>
                   </div>
                 </Link>
