@@ -274,6 +274,57 @@ export const projects: Project[] = [
     ]
   },
 
+  // AutoShop Manager Project
+  {
+    id: "s2",
+    serviceId: "3",
+    name: "Mauli Car World - AutoShop Manager",
+    shortDescription: "Complete car parts & service management system with inventory tracking, customer management, service workflow, and comprehensive business analytics.",
+    fullDescription: "AutoShop Manager is a full-stack web application designed specifically for automotive repair shops and car parts businesses. The system helps manage car parts inventory and stock levels, customer relationships and vehicle records, service workflow from inquiry to completion, employee management and HR operations, sales orders and payment tracking, purchase orders and supplier management, task assignments and leave management, and customer communications and feedback. The application provides a professional dashboard interface with role-based access control supporting Admin, Manager, Inventory Manager, Sales Executive, HR Manager, and Service Staff roles, ensuring each user only sees and manages what's relevant to their responsibilities.",
+    imageUrl: "/attached_assets/Screenshot_2025-12-13_at_2.52.05_PM_1765617730192.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2025-12-13_at_2.52.25_PM_1765617747558.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.52.59_PM_1765617782614.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.53.20_PM_1765617804010.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.53.48_PM_1765617831907.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.01_PM_1765617844771.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.16_PM_1765617859276.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.23_PM_1765617865423.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.35_PM_1765617878076.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.54.46_PM_1765617889880.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.55.26_PM_1765617929392.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.55.46_PM_1765617949161.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.55.57_PM_1765617960031.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.56.06_PM_1765617969242.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.56.19_PM_1765617982310.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.56.34_PM_1765617996829.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.56.46_PM_1765618009429.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.56.55_PM_1765618018339.png",
+      "/attached_assets/Screenshot_2025-12-13_at_2.57.12_PM_1765618034978.png"
+    ],
+    clientName: "Mauli Car World",
+    clientIndustry: "Automotive & Auto Parts",
+    clientLocation: "Beed, Maharashtra, India",
+    websiteUrl: "#",
+    duration: "6 weeks",
+    completedDate: "December 2024",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod"],
+    features: [
+      "Problem: No centralized inventory tracking | Solution: Real-time product catalog with stock levels, low stock alerts, and warehouse location tracking",
+      "Problem: Customer vehicle records were scattered | Solution: Complete customer database with multiple vehicle registration and service history",
+      "Problem: Service workflow was disorganized | Solution: Visual Kanban-style workflow board with four stages: Inquired, Working, Waiting, Completed",
+      "Problem: Manual invoice creation was time-consuming | Solution: Automated invoice generation with payment status tracking and PDF export",
+      "Problem: No visibility into business performance | Solution: Role-based analytics dashboard with sales reports, inventory status, and employee metrics",
+      "Problem: Managing different staff access levels | Solution: Five distinct user roles with granular permissions for each module"
+    ],
+    outcomes: [
+      "Problem: Stock levels were unknown until running out | Result: Real-time inventory alerts reduced stockouts by 90%",
+      "Problem: Customer information was lost between visits | Result: Complete service history retention for repeat customers",
+      "Problem: No tracking of service job progress | Result: Visual workflow reduced service completion time by 40%",
+      "Problem: Revenue leakage from unpaid invoices | Result: Payment tracking improved collection rate by 60%"
+    ]
+  },
+
   // Digital Marketing Projects
   {
     id: "d1",
