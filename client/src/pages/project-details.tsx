@@ -172,106 +172,82 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h2 className="text-2xl font-bold text-foreground mb-8">
-                Client Information
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-900 mb-6 uppercase tracking-wide">
+                Project Details
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Building2 className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Client Name
-                    </span>
-                  </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Client
+                  </span>
                   <p
-                    className="text-xl font-semibold text-foreground"
+                    className="text-sm font-medium text-gray-900 dark:text-gray-900"
                     data-testid="text-client-name"
                   >
                     {project?.clientName}
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Briefcase className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Industry
-                    </span>
-                  </div>
-                  <p className="text-xl font-semibold text-foreground">
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Industry
+                  </span>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
                     {project?.clientIndustry}
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Location
-                    </span>
-                  </div>
-                  <p className="text-xl font-semibold text-foreground">
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Location
+                  </span>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
                     {project?.clientLocation}
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Clock className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Duration
-                    </span>
-                  </div>
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Duration
+                  </span>
                   <p
-                    className="text-xl font-semibold text-foreground"
+                    className="text-sm font-medium text-gray-900 dark:text-gray-900"
                     data-testid="text-duration"
                   >
                     {project?.duration}
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Calendar className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Completed
-                    </span>
-                  </div>
-                  <p className="text-xl font-semibold text-foreground">
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Completed
+                  </span>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
                     {project?.completedDate}
                   </p>
-                </Card>
+                </div>
 
-                <Card className="p-6 border-card-border bg-card">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <Globe className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-                      Website
-                    </span>
-                  </div>
-                  <a
-                    href={project?.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg font-semibold text-primary hover:underline inline-flex items-center gap-2"
-                    data-testid="link-website"
-                  >
-                    Visit Site
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                </Card>
+                <div className="space-y-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                    Website
+                  </span>
+                  {project?.websiteUrl && project.websiteUrl !== "#" ? (
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-gray-900 dark:text-gray-900 hover:underline inline-flex items-center gap-1"
+                      data-testid="link-website"
+                    >
+                      Visit Site
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : (
+                    <p className="text-sm font-medium text-gray-500 dark:text-gray-500">
+                      Private
+                    </p>
+                  )}
+                </div>
               </div>
             </motion.section>
 
@@ -283,18 +259,17 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h2 className="text-2xl font-bold text-foreground mb-6">
-                Technologies & Tools
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-900 mb-6 uppercase tracking-wide">
+                Technologies
               </h2>
-              <div className="flex flex-wrap gap-3" data-testid="list-technologies">
+              <div className="flex flex-wrap gap-2" data-testid="list-technologies">
                 {project?.technologies.map((tech, index) => (
-                  <Badge
+                  <span
                     key={index}
-                    variant="secondary"
-                    className="font-mono text-sm px-4 py-2"
+                    className="px-3 py-1.5 text-xs font-medium bg-gray-100 dark:bg-gray-100 text-gray-700 dark:text-gray-700 rounded"
                   >
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </motion.section>
@@ -305,20 +280,20 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-900 mb-6 uppercase tracking-wide">
                 Key Features
               </h2>
               <div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
                 data-testid="list-features"
               >
                 {project?.features.map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 p-4 rounded-lg bg-muted/30"
+                    className="flex items-start gap-3 py-2"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground font-medium">{feature}</span>
+                    <span className="w-1.5 h-1.5 mt-2 rounded-full bg-gray-400 dark:bg-gray-400 flex-shrink-0" />
+                    <span className="text-sm text-gray-700 dark:text-gray-700">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -330,34 +305,24 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Card className="p-8 border-card-border bg-gradient-to-br from-primary/5 to-primary/10">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 rounded-xl bg-primary/20">
-                    <TrendingUp className="w-7 h-7 text-primary" />
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-900 mb-6 uppercase tracking-wide">
+                Results
+              </h2>
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+                data-testid="list-outcomes"
+              >
+                {project?.outcomes.map((outcome, index) => (
+                  <div
+                    key={index}
+                    className="p-4 border border-gray-200 dark:border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-50"
+                  >
+                    <p className="text-sm text-gray-700 dark:text-gray-700">
+                      {outcome}
+                    </p>
                   </div>
-                  <h2 className="text-2xl font-bold text-foreground">
-                    Project Outcomes
-                  </h2>
-                </div>
-                <div
-                  className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                  data-testid="list-outcomes"
-                >
-                  {project?.outcomes.map((outcome, index) => (
-                    <div
-                      key={index}
-                      className="text-center p-6 rounded-xl bg-background/60 backdrop-blur-sm"
-                    >
-                      <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 text-primary text-xl font-bold flex items-center justify-center">
-                        {index + 1}
-                      </div>
-                      <p className="text-foreground font-medium text-lg">
-                        {outcome}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
+                ))}
+              </div>
             </motion.section>
 
             {/* Back Button */}

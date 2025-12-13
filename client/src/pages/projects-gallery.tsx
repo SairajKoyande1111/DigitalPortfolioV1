@@ -145,34 +145,38 @@ export default function ProjectsGallery() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {projects.map((project) => (
               <motion.div key={project.id} variants={cardVariants}>
                 <Link href={`/projects/${serviceSlug}/${project.id}`}>
                   <Card
-                    className="group overflow-hidden cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 border-card-border bg-card"
+                    className="group overflow-hidden cursor-pointer transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 border border-gray-200 dark:border-gray-200 bg-white dark:bg-white"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-900 mb-3 line-clamp-1">
                         {project.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
+                      <p className="text-sm text-gray-600 dark:text-gray-600 line-clamp-2 leading-relaxed">
                         {project.shortDescription}
                       </p>
-                      <div className="mt-4 flex items-center text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-wide">
-                        View Details
-                        <ArrowLeft className="w-3 h-3 ml-1 rotate-180" />
+                      <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-100 flex items-center justify-between">
+                        <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                          {project.clientIndustry}
+                        </span>
+                        <span className="text-xs font-medium text-gray-900 dark:text-gray-900 flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                          View Project
+                          <ArrowLeft className="w-3 h-3 rotate-180" />
+                        </span>
                       </div>
                     </div>
                   </Card>
