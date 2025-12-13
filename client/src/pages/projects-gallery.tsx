@@ -152,11 +152,11 @@ export default function ProjectsGallery() {
                     className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                    <div className="relative aspect-[4/3] overflow-hidden mb-4">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover object-center"
                         loading="lazy"
                       />
                     </div>
