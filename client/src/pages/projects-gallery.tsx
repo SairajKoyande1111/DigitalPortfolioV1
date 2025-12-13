@@ -1,5 +1,4 @@
 import { Link, useParams } from "wouter";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowLeft } from "lucide-react";
@@ -32,14 +31,13 @@ const cardVariants = {
 
 function ProjectCardSkeleton() {
   return (
-    <Card className="overflow-hidden border-card-border bg-card">
-      <Skeleton className="aspect-video w-full" />
-      <div className="p-6">
-        <Skeleton className="h-6 w-3/4 mb-2" />
-        <Skeleton className="h-4 w-full mb-1" />
-        <Skeleton className="h-4 w-2/3" />
+    <div className="space-y-4">
+      <Skeleton className="aspect-square w-full" />
+      <div className="space-y-2">
+        <Skeleton className="h-6 w-3/4" />
+        <Skeleton className="h-4 w-full" />
       </div>
-    </Card>
+    </div>
   );
 }
 
@@ -124,8 +122,8 @@ export default function ProjectsGallery() {
         </motion.div>
 
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {[1, 2, 3].map((i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {[1, 2, 3, 4].map((i) => (
               <ProjectCardSkeleton key={i} />
             ))}
           </div>
@@ -145,41 +143,32 @@ export default function ProjectsGallery() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
           >
             {projects.map((project) => (
               <motion.div key={project.id} variants={cardVariants}>
                 <Link href={`/projects/${serviceSlug}/${project.id}`}>
-                  <Card
-                    className="group overflow-hidden cursor-pointer transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 border border-gray-200 dark:border-gray-200 bg-white dark:bg-white"
+                  <div
+                    className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                    <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-900 mb-3 line-clamp-1">
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors">
                         {project.name}
                       </h3>
                       <p className="text-sm text-gray-600 dark:text-gray-600 line-clamp-2 leading-relaxed">
                         {project.shortDescription}
                       </p>
-                      <div className="mt-5 pt-4 border-t border-gray-100 dark:border-gray-100 flex items-center justify-between">
-                        <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
-                          {project.clientIndustry}
-                        </span>
-                        <span className="text-xs font-medium text-gray-900 dark:text-gray-900 flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
-                          View Project
-                          <ArrowLeft className="w-3 h-3 rotate-180" />
-                        </span>
-                      </div>
                     </div>
-                  </Card>
+                  </div>
                 </Link>
               </motion.div>
             ))}
