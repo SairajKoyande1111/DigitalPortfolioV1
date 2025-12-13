@@ -232,7 +232,7 @@ export const projects: Project[] = [
   {
     id: "s1",
     serviceId: "3",
-    name: "PRISM (Post Production Management System)",
+    name: "PRISM Post Production Management System",
     shortDescription: "Comprehensive studio management software for post-production houses managing film, TV, and advertisement editing workflows.",
     fullDescription: "PRISM is a comprehensive studio management software designed for post-production houses managing film, TV serial, web series, and advertisement editing workflows. The system provides end-to-end management of studio resources, bookings, billing, and conflict resolution with features including centralized booking management with conflict detection, real-time visibility of room and editor availability, automated chalan/invoice generation, and multi-company support for franchise operations.",
     imageUrl: "/attached_assets/Screenshot_2025-12-13_at_10.13.14_AM_1765600998382.png",
@@ -255,7 +255,7 @@ export const projects: Project[] = [
     clientIndustry: "Media & Entertainment",
     clientLocation: "Mumbai, India",
     websiteUrl: "#",
-    duration: "6 months",
+    duration: "4 weeks",
     completedDate: "December 2024",
     technologies: ["React", "TypeScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Shadcn/ui", "AWS", "S3", "JWT Authentication"],
     features: [

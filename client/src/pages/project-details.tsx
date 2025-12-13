@@ -29,16 +29,16 @@ import {
 import { Shield, Layers } from "lucide-react";
 
 const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
-  "React": { icon: <SiReact className="w-5 h-5 text-[#61DAFB]" />, category: "Frontend" },
-  "TypeScript": { icon: <SiTypescript className="w-5 h-5 text-[#3178C6]" />, category: "Frontend" },
-  "Tailwind CSS": { icon: <SiTailwindcss className="w-5 h-5 text-[#06B6D4]" />, category: "Frontend" },
-  "Shadcn/ui": { icon: <Layers className="w-5 h-5 text-gray-700" />, category: "Frontend" },
-  "Node.js": { icon: <SiNodedotjs className="w-5 h-5 text-[#339933]" />, category: "Backend" },
-  "Express.js": { icon: <SiExpress className="w-5 h-5 text-gray-700" />, category: "Backend" },
-  "MySQL": { icon: <SiMysql className="w-5 h-5 text-[#4479A1]" />, category: "Database" },
-  "AWS": { icon: <SiAmazon className="w-5 h-5 text-[#FF9900]" />, category: "Deployment" },
-  "S3": { icon: <SiAmazons3 className="w-5 h-5 text-[#569A31]" />, category: "Deployment" },
-  "JWT Authentication": { icon: <Shield className="w-5 h-5 text-green-600" />, category: "Security" },
+  "React": { icon: <SiReact className="w-7 h-7 text-[#61DAFB]" />, category: "Frontend" },
+  "TypeScript": { icon: <SiTypescript className="w-7 h-7 text-[#3178C6]" />, category: "Frontend" },
+  "Tailwind CSS": { icon: <SiTailwindcss className="w-7 h-7 text-[#06B6D4]" />, category: "Frontend" },
+  "Shadcn/ui": { icon: <Layers className="w-7 h-7 text-gray-700" />, category: "Frontend" },
+  "Node.js": { icon: <SiNodedotjs className="w-7 h-7 text-[#339933]" />, category: "Backend" },
+  "Express.js": { icon: <SiExpress className="w-7 h-7 text-gray-700" />, category: "Backend" },
+  "MySQL": { icon: <SiMysql className="w-7 h-7 text-[#4479A1]" />, category: "Database" },
+  "AWS": { icon: <SiAmazon className="w-7 h-7 text-[#FF9900]" />, category: "Deployment" },
+  "S3": { icon: <SiAmazons3 className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
+  "JWT Authentication": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
 };
 
 function ProjectDetailsSkeleton() {
@@ -87,45 +87,47 @@ function ImageLightbox({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-4 right-4 text-white hover:bg-white/20 z-50"
+          className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/30 z-50 h-12 w-12"
           onClick={onClose}
           data-testid="button-close-lightbox"
         >
-          <X className="w-6 h-6" />
+          <X className="w-8 h-8" />
         </Button>
         
         <Button
           variant="ghost"
           size="icon"
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-50"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-14 w-14"
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
           data-testid="button-prev-image"
         >
-          <ChevronLeft className="w-8 h-8" />
+          <ChevronLeft className="w-10 h-10" />
         </Button>
         
         <Button
           variant="ghost"
           size="icon"
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 z-50"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-14 w-14"
           onClick={(e) => { e.stopPropagation(); onNext(); }}
           data-testid="button-next-image"
         >
-          <ChevronRight className="w-8 h-8" />
+          <ChevronRight className="w-10 h-10" />
         </Button>
         
-        <motion.img
-          key={currentIndex}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          src={images[currentIndex]}
-          alt={`${projectName} - Image ${currentIndex + 1}`}
-          className="max-w-[90vw] max-h-[90vh] object-contain"
-          onClick={(e) => e.stopPropagation()}
-        />
+        <div className="flex items-center justify-center w-full h-full px-20 md:px-24 py-16">
+          <motion.img
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            src={images[currentIndex]}
+            alt={`${projectName} - Image ${currentIndex + 1}`}
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
         
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-base bg-black/50 px-4 py-2 rounded-full">
           {currentIndex + 1} / {images.length}
         </div>
       </motion.div>
@@ -246,7 +248,7 @@ export default function ProjectDetails() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-black tracking-tight leading-tight"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black dark:text-black tracking-tight leading-tight whitespace-nowrap"
                 data-testid="text-project-name"
               >
                 {project?.name}
@@ -254,8 +256,8 @@ export default function ProjectDetails() {
             </motion.section>
 
             {/* Image Gallery - Desktop Layout */}
-            <section className="hidden lg:block">
-              <div className="grid grid-cols-3 gap-4">
+            <section className="hidden lg:block -mx-4 sm:-mx-6 lg:-mx-8">
+              <div className="grid grid-cols-3 gap-4 px-4 sm:px-6 lg:px-8">
                 {/* Main Image - Left Side */}
                 <div 
                   className="col-span-2 overflow-hidden cursor-pointer"
@@ -370,16 +372,16 @@ export default function ProjectDetails() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-900 mb-6 uppercase tracking-wide">
+              <h2 className="text-xl font-semibold text-black dark:text-black mb-6 uppercase tracking-wide">
                 Project Details
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Client
                   </span>
                   <p
-                    className="text-sm font-medium text-gray-900 dark:text-gray-900"
+                    className="text-sm font-medium text-black dark:text-black"
                     data-testid="text-client-name"
                   >
                     {project?.clientName}
@@ -387,29 +389,29 @@ export default function ProjectDetails() {
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Industry
                   </span>
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
+                  <p className="text-sm font-medium text-black dark:text-black">
                     {project?.clientIndustry}
                   </p>
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Location
                   </span>
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
+                  <p className="text-sm font-medium text-black dark:text-black">
                     {project?.clientLocation}
                   </p>
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Duration
                   </span>
                   <p
-                    className="text-sm font-medium text-gray-900 dark:text-gray-900"
+                    className="text-sm font-medium text-black dark:text-black"
                     data-testid="text-duration"
                   >
                     {project?.duration}
@@ -417,16 +419,16 @@ export default function ProjectDetails() {
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Completed
                   </span>
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
+                  <p className="text-sm font-medium text-black dark:text-black">
                     {project?.completedDate}
                   </p>
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider font-medium">
+                  <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
                     Deployment
                   </span>
                   {project?.websiteUrl && project.websiteUrl !== "#" ? (
@@ -434,14 +436,14 @@ export default function ProjectDetails() {
                       href={project.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-gray-900 dark:text-gray-900 hover:underline inline-flex items-center gap-1"
+                      className="text-sm font-medium text-black dark:text-black hover:underline inline-flex items-center gap-1"
                       data-testid="link-website"
                     >
                       Visit Site
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
-                    <p className="text-sm font-medium text-gray-900 dark:text-gray-900">
+                    <p className="text-sm font-medium text-black dark:text-black">
                       Private
                     </p>
                   )}
@@ -456,50 +458,47 @@ export default function ProjectDetails() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-50 dark:to-gray-100 p-8 -mx-4 sm:-mx-6 lg:-mx-8"
             >
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-900 mb-8 flex items-center gap-3">
-                  <span className="w-1 h-8 bg-blue-500 rounded-full" />
-                  Technology Stack
-                </h2>
-                <div data-testid="list-technologies">
-                  {(() => {
-                    const technologies = project?.technologies ?? [];
-                    const categories = ["Frontend", "Backend", "Database", "Deployment", "Security"];
-                    const grouped: Record<string, string[]> = {};
-                    
-                    technologies.forEach(tech => {
-                      const techInfo = techIconMap[tech];
-                      const category = techInfo?.category || "Other";
-                      if (!grouped[category]) grouped[category] = [];
-                      grouped[category].push(tech);
-                    });
-                    
-                    return (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                        {categories.filter(cat => grouped[cat]?.length > 0).map(category => (
-                          <div key={category} className="space-y-3">
-                            <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-600 uppercase tracking-wider">
-                              {category}
-                            </h3>
-                            <div className="space-y-2">
-                              {grouped[category].map((tech, idx) => (
-                                <div
-                                  key={idx}
-                                  className="flex items-center gap-3 bg-white dark:bg-white p-3 shadow-sm border border-gray-100 rounded-md"
-                                >
-                                  {techIconMap[tech]?.icon || <CheckCircle2 className="w-5 h-5 text-gray-400" />}
-                                  <span className="text-sm font-medium text-gray-900 dark:text-gray-900">{tech}</span>
-                                </div>
-                              ))}
-                            </div>
+              <h2 className="text-2xl font-bold text-black dark:text-black mb-8 flex items-center gap-3">
+                <span className="w-1 h-8 bg-blue-500 rounded-full" />
+                Technology Stack
+              </h2>
+              <div data-testid="list-technologies">
+                {(() => {
+                  const technologies = project?.technologies ?? [];
+                  const categories = ["Frontend", "Backend", "Database", "Deployment", "Security"];
+                  const grouped: Record<string, string[]> = {};
+                  
+                  technologies.forEach(tech => {
+                    const techInfo = techIconMap[tech];
+                    const category = techInfo?.category || "Other";
+                    if (!grouped[category]) grouped[category] = [];
+                    grouped[category].push(tech);
+                  });
+                  
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                      {categories.filter(cat => grouped[cat]?.length > 0).map(category => (
+                        <div key={category} className="space-y-3">
+                          <h3 className="text-sm font-semibold text-black dark:text-black uppercase tracking-wider">
+                            {category}
+                          </h3>
+                          <div className="space-y-2">
+                            {grouped[category].map((tech, idx) => (
+                              <div
+                                key={idx}
+                                className="flex items-center gap-3 p-3 border border-gray-200 rounded-md"
+                              >
+                                {techIconMap[tech]?.icon || <CheckCircle2 className="w-7 h-7 text-gray-400" />}
+                                <span className="text-sm font-medium text-black dark:text-black">{tech}</span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    );
-                  })()}
-                </div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })()}
               </div>
             </motion.section>
 
@@ -565,64 +564,61 @@ export default function ProjectDetails() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-50 dark:to-indigo-50 p-8 -mx-4 sm:-mx-6 lg:-mx-8"
             >
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-900 mb-8 flex items-center gap-3">
-                  <span className="w-1 h-8 bg-indigo-500 rounded-full" />
-                  Project Results
-                </h2>
-                <div
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                  data-testid="list-outcomes"
-                >
-                  {(project?.outcomes ?? []).map((outcome, index) => {
-                    const hasProblemResult = outcome.includes(" | ");
-                    if (hasProblemResult) {
-                      const [problem, result] = outcome.split(" | ");
-                      const problemText = problem.replace("Problem: ", "");
-                      const resultText = result.replace("Result: ", "");
-                      return (
-                        <div
-                          key={index}
-                          className="bg-white dark:bg-white shadow-sm border border-indigo-100 rounded-md overflow-hidden"
-                        >
-                          <div className="p-4 bg-gray-50 dark:bg-gray-50 border-b border-gray-200">
-                            <div className="flex items-start gap-3">
-                              <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                              <div>
-                                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Challenge</span>
-                                <p className="text-sm text-gray-700 dark:text-gray-700 mt-1">{problemText}</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="p-4">
-                            <div className="flex items-start gap-3">
-                              <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                              <div>
-                                <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Result</span>
-                                <p className="text-sm font-semibold text-gray-900 dark:text-gray-900 mt-1">{resultText}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    }
+              <h2 className="text-2xl font-bold text-black dark:text-black mb-8 flex items-center gap-3">
+                <span className="w-1 h-8 bg-indigo-500 rounded-full" />
+                Project Results
+              </h2>
+              <div
+                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                data-testid="list-outcomes"
+              >
+                {(project?.outcomes ?? []).map((outcome, index) => {
+                  const hasProblemResult = outcome.includes(" | ");
+                  if (hasProblemResult) {
+                    const [problem, result] = outcome.split(" | ");
+                    const problemText = problem.replace("Problem: ", "");
+                    const resultText = result.replace("Result: ", "");
                     return (
                       <div
                         key={index}
-                        className="flex items-start gap-4 p-5 bg-white dark:bg-white shadow-sm border border-indigo-100 rounded-md"
+                        className="border border-gray-200 rounded-md overflow-hidden"
                       >
-                        <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                          <span className="text-indigo-600 font-bold text-sm">{index + 1}</span>
+                        <div className="p-4 bg-gray-50 dark:bg-gray-50 border-b border-gray-200">
+                          <div className="flex items-start gap-3">
+                            <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <span className="text-xs font-semibold text-black uppercase tracking-wider">Challenge</span>
+                              <p className="text-sm text-black dark:text-black mt-1">{problemText}</p>
+                            </div>
+                          </div>
                         </div>
-                        <p className="text-base text-gray-800 dark:text-gray-800 font-medium leading-relaxed">
-                          {outcome}
-                        </p>
+                        <div className="p-4">
+                          <div className="flex items-start gap-3">
+                            <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <span className="text-xs font-semibold text-green-600 uppercase tracking-wider">Result</span>
+                              <p className="text-sm font-semibold text-black dark:text-black mt-1">{resultText}</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     );
-                  })}
-                </div>
+                  }
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-start gap-4 p-5 border border-gray-200 rounded-md"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-indigo-600 font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <p className="text-base text-black dark:text-black font-medium leading-relaxed">
+                        {outcome}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </motion.section>
 
