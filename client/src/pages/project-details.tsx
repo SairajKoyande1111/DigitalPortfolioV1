@@ -313,7 +313,7 @@ export default function ProjectDetails() {
                 
                 {/* Thumbnails - Right Side */}
                 {desktopThumbnails.length > 0 && (
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-2 gap-2 content-start">
                     {desktopThumbnails.map((img, index) => {
                       const isLastVisible = index === desktopThumbnails.length - 1;
                       const showViewAll = isLastVisible && hasMoreDesktopImages;
@@ -322,14 +322,14 @@ export default function ProjectDetails() {
                       return (
                         <div
                           key={index}
-                          className="relative overflow-hidden cursor-pointer"
+                          className="relative overflow-hidden cursor-pointer aspect-video"
                           onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                           data-testid={`thumbnail-desktop-${index}`}
                         >
                           <img
                             src={img}
                             alt={`${project?.name} gallery ${index + 1}`}
-                            className="w-full h-auto"
+                            className="w-full h-full object-cover"
                             loading="lazy"
                           />
                           {showViewAll && (
@@ -371,14 +371,14 @@ export default function ProjectDetails() {
                     return (
                       <div
                         key={index}
-                        className="relative overflow-hidden cursor-pointer"
+                        className="relative overflow-hidden cursor-pointer aspect-video"
                         onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                         data-testid={`thumbnail-mobile-${index}`}
                       >
                         <img
                           src={img}
                           alt={`${project?.name} gallery ${index + 1}`}
-                          className="w-full h-auto"
+                          className="w-full h-full object-cover"
                           loading="lazy"
                         />
                         {showViewAll && (
