@@ -32,7 +32,7 @@ const cardVariants = {
 function ProjectCardSkeleton() {
   return (
     <div className="space-y-4">
-      <Skeleton className="aspect-[4/3] w-full" />
+      <Skeleton className="aspect-video w-full" />
       <div className="space-y-2">
         <Skeleton className="h-6 w-3/4" />
         <Skeleton className="h-4 w-full" />
@@ -152,11 +152,11 @@ export default function ProjectsGallery() {
                     className="group cursor-pointer"
                     data-testid={`card-project-${project.id}`}
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden mb-4">
+                    <div className="relative overflow-hidden mb-4">
                       <img
                         src={project.imageUrl}
                         alt={project.name}
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-auto"
                         loading="lazy"
                       />
                     </div>

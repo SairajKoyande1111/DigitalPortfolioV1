@@ -19,10 +19,10 @@ function ProjectDetailsSkeleton() {
   return (
     <div className="space-y-12">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <Skeleton className="aspect-[4/3] w-full lg:col-span-2" />
+        <Skeleton className="aspect-video w-full lg:col-span-2" />
         <div className="grid grid-cols-2 gap-2">
           {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="aspect-[4/3]" />
+            <Skeleton key={i} className="aspect-video" />
           ))}
         </div>
       </div>
@@ -218,14 +218,14 @@ export default function ProjectDetails() {
               <div className="grid grid-cols-3 gap-4">
                 {/* Main Image - Left Side */}
                 <div 
-                  className="col-span-2 aspect-[4/3] overflow-hidden cursor-pointer"
+                  className="col-span-2 overflow-hidden cursor-pointer"
                   onClick={() => openLightbox(0)}
                   data-testid="image-main-desktop"
                 >
                   <img
                     src={project?.imageUrl}
                     alt={project?.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto"
                   />
                 </div>
                 
@@ -240,14 +240,14 @@ export default function ProjectDetails() {
                       return (
                         <div
                           key={index}
-                          className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+                          className="relative overflow-hidden cursor-pointer"
                           onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                           data-testid={`thumbnail-desktop-${index}`}
                         >
                           <img
                             src={img}
                             alt={`${project?.name} gallery ${index + 1}`}
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto"
                             loading="lazy"
                           />
                           {showViewAll && (
@@ -267,14 +267,14 @@ export default function ProjectDetails() {
             <section className="lg:hidden">
               {/* Main Image */}
               <div 
-                className="aspect-[4/3] overflow-hidden cursor-pointer mb-2"
+                className="overflow-hidden cursor-pointer mb-2"
                 onClick={() => openLightbox(0)}
                 data-testid="image-main-mobile"
               >
                 <img
                   src={project?.imageUrl}
                   alt={project?.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
               </div>
               
@@ -289,14 +289,14 @@ export default function ProjectDetails() {
                     return (
                       <div
                         key={index}
-                        className="relative aspect-[4/3] overflow-hidden cursor-pointer"
+                        className="relative overflow-hidden cursor-pointer"
                         onClick={() => showViewAll ? openLightbox(0) : openLightbox(index + 1)}
                         data-testid={`thumbnail-mobile-${index}`}
                       >
                         <img
                           src={img}
                           alt={`${project?.name} gallery ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto"
                           loading="lazy"
                         />
                         {showViewAll && (
