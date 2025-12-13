@@ -98,59 +98,77 @@ function ImageLightbox({ images, currentIndex, isOpen, onClose, onNext, onPrev, 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 bg-black/95"
+        className="fixed inset-0 z-50 bg-black flex flex-col"
         onClick={onClose}
       >
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/30 z-50 h-12 w-12 rounded-full"
-          onClick={(e) => { e.stopPropagation(); onClose(); }}
-          data-testid="button-close-lightbox"
-        >
-          <X className="w-6 h-6" />
-        </Button>
-        
-        {images.length > 1 && (
-          <>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
-              onClick={(e) => { e.stopPropagation(); onPrev(); }}
-              data-testid="button-prev-image"
-            >
-              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
-            </Button>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/30 z-50 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
-              onClick={(e) => { e.stopPropagation(); onNext(); }}
-              data-testid="button-next-image"
-            >
-              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
-            </Button>
-          </>
-        )}
-        
-        <div className="flex items-center justify-center w-full h-full p-4 sm:p-8 pt-16 pb-16">
-          <motion.img
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            src={images[currentIndex]}
-            alt={`${projectName} - Image ${currentIndex + 1}`}
-            className="max-w-full max-h-full object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+        {/* Top bar with close button */}
+        <div className="flex justify-end p-4 flex-shrink-0">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-white bg-white/10 hover:bg-white/30 h-10 w-10 rounded-full"
+            onClick={(e) => { e.stopPropagation(); onClose(); }}
+            data-testid="button-close-lightbox"
+          >
+            <X className="w-5 h-5" />
+          </Button>
         </div>
         
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded-full">
-          {currentIndex + 1} / {images.length}
+        {/* Main content area with image and navigation */}
+        <div className="flex-1 flex items-center justify-center relative min-h-0">
+          {/* Left navigation */}
+          {images.length > 1 && (
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-20 flex items-center justify-center z-10">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white bg-white/10 hover:bg-white/30 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
+                onClick={(e) => { e.stopPropagation(); onPrev(); }}
+                data-testid="button-prev-image"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+            </div>
+          )}
+          
+          {/* Image container */}
+          <div 
+            className="flex items-center justify-center px-16 sm:px-24 w-full h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <motion.img
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              src={images[currentIndex]}
+              alt={`${projectName} - Image ${currentIndex + 1}`}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+          
+          {/* Right navigation */}
+          {images.length > 1 && (
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-20 flex items-center justify-center z-10">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white bg-white/10 hover:bg-white/30 h-10 w-10 sm:h-12 sm:w-12 rounded-full"
+                onClick={(e) => { e.stopPropagation(); onNext(); }}
+                data-testid="button-next-image"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
+            </div>
+          )}
+        </div>
+        
+        {/* Bottom bar with counter */}
+        <div className="flex justify-center p-4 flex-shrink-0">
+          <div className="text-white text-sm bg-white/10 px-4 py-2 rounded-full">
+            {currentIndex + 1} / {images.length}
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>
