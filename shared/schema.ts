@@ -371,6 +371,58 @@ export const projects: Project[] = [
       "Problem: High inventory wastage | Result: 30% reduction in food wastage through better stock tracking"
     ]
   },
+  {
+    id: "s4",
+    serviceId: "3",
+    name: "AutoGamma Automobile Management System",
+    shortDescription: "Advanced automobile workshop management system with spare parts inventory, service scheduling, and customer loyalty tracking.",
+    fullDescription: "AutoGamma is a next-generation automobile management system designed to modernize traditional garage and spare parts operations. The system provides a unified platform for managing service appointments, technician productivity, and complex inventory across multiple locations. Key modules include a dynamic parts catalog with automated reordering, detailed vehicle service history, insurance claim tracking, and a customer portal for appointment booking and service updates. The application focuses on operational efficiency and customer retention through data-driven insights and automated communication workflows.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_2.11.16_PM_1767343276685.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_2.11.36_PM_1767343296173.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.11.57_PM_1767343317042.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.24_PM_1767343344062.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.35_PM_1767343355208.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.06_PM_1767343386638.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.31_PM_1767343411425.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.41_PM_1767343421575.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.07_PM_1767343447917.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.35_PM_1767343475141.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.50_PM_1767343490795.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.58_PM_1767343498807.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.15.11_PM_1767343511874.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.15.42_PM_1767343542289.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.16.12_PM_1767343572887.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.16.22_PM_1767343582496.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.16.32_PM_1767343592476.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.16.51_PM_1767343611394.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.17.02_PM_1767343622728.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.17.11_PM_1767343631988.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.17.22_PM_1767343642398.png"
+    ],
+    clientName: "AutoGamma Services",
+    clientIndustry: "Automotive Service & Repair",
+    clientLocation: "Mumbai, India",
+    websiteUrl: "#",
+    duration: "10 weeks",
+    completedDate: "January 2025",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod", "JWT Authentication", "AWS", "S3"],
+    database: "PostgreSQL",
+    features: [
+      "Problem: Inefficient spare parts management | Solution: Advanced inventory system with real-time stock tracking, category filtering, and low-stock alerts",
+      "Problem: Manual service job scheduling | Solution: Digital service board for real-time tracking of job status from vehicle arrival to completion",
+      "Problem: Fragmented customer communication | Solution: Integrated notification system for service updates and automated maintenance reminders",
+      "Problem: Complex billing for parts and labor | Solution: Unified invoicing module with split-billing support and payment status tracking",
+      "Problem: Difficulty tracking technician performance | Solution: Productivity dashboard monitoring job completion times and efficiency metrics",
+      "Problem: Paper-based insurance documentation | Solution: Digital claim management module for storing vehicle insurance details and claim history"
+    ],
+    outcomes: [
+      "Problem: Frequent stockouts of critical parts | Result: Automated reordering system reduced inventory gaps by 75%",
+      "Problem: Long customer waiting times | Result: Optimized scheduling reduced average service turnaround time by 30%",
+      "Problem: Manual data entry errors | Result: End-to-end digitalization improved data accuracy and reporting reliability",
+      "Problem: Lack of business growth insights | Result: Real-time analytics enabled 15% increase in cross-selling service packages"
+    ]
+  },
 
   // Digital Marketing Projects
   {
