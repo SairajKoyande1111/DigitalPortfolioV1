@@ -577,11 +577,14 @@ export default function ProjectDetails() {
                 data-testid="list-features"
               >
                 {(project?.features ?? []).map((feature, index) => {
-                  const hasProblemSolution = feature.includes(" | ");
+                  const hasProblemSolution = feature.toLowerCase().includes("problem:") && feature.toLowerCase().includes("| solution:");
                   if (hasProblemSolution) {
-                    const [problem, solution] = feature.split(" | ");
-                    const problemText = problem.replace("Problem: ", "");
-                    const solutionText = solution.replace("Solution: ", "");
+                    const separatorIndex = feature.indexOf(" | ");
+                    const problemPart = feature.substring(0, separatorIndex);
+                    const solutionPart = feature.substring(separatorIndex + 3);
+                    
+                    const problemText = problemPart.replace(/problem:\s*/i, "").trim();
+                    const solutionText = solutionPart.replace(/solution:\s*/i, "").trim();
                     return (
                       <div
                         key={index}
