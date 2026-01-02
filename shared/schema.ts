@@ -131,6 +131,57 @@ export const projects: Project[] = [
     outcomes: ["200% increase in online sales", "30% reduction in cart abandonment", "95% customer satisfaction rating"]
   },
   {
+    id: "s6",
+    serviceId: "3",
+    name: "Online Training/Gym Management System",
+    shortDescription: "A comprehensive multi-role dashboard for gym owners, trainers, and clients to manage workouts, schedules, and memberships.",
+    fullDescription: "The Online Training/Gym Management System is a sophisticated platform designed to streamline fitness center operations. It features three distinct dashboards tailored for Admins (owners), Trainers, and Clients. Admins can manage staff, track revenue, and oversee facility usage. Trainers have dedicated tools for creating personalized workout plans, scheduling sessions, and tracking client progress. Clients benefit from an easy-to-use interface to book classes, log their workouts, monitor their fitness journey, and manage their memberships. The system ensures a seamless flow of information between all parties, enhancing the training experience and operational efficiency.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_4.27.03_PM_1767351443657.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_4.27.03_PM_1767351443657.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.27.31_PM_1767351465225.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.28.14_PM_1767351509939.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.28.24_PM_1767351518177.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.28.32_PM_1767351525997.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.28.53_PM_1767351545686.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.29.21_PM_1767351574046.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.29.35_PM_1767351588636.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.31.06_PM_1767351678888.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.31.25_PM_1767351700466.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.31.42_PM_1767351717882.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.32.08_PM_1767351741755.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.02_PM_1767351797585.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.33.15_PM_1767351811558.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.02_PM_1767351855653.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.34.40_PM_1767351893962.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.35.03_PM_1767351918335.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.35.25_PM_1767351939801.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.35.53_PM_1767351965874.png",
+      "/attached_assets/Screenshot_2026-01-02_at_4.36.14_PM_1767351988950.png"
+    ],
+    clientName: "FitCore Gyms",
+    clientIndustry: "Fitness & Wellness",
+    clientLocation: "Bangalore, India",
+    websiteUrl: "#",
+    duration: "10 weeks",
+    completedDate: "November 2025",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "Recharts", "Framer Motion", "JWT Authentication"],
+    features: [
+      "Problem: Manual membership tracking and renewals | Solution: Automated membership management with renewal alerts and payment status",
+      "Problem: Disconnected communication between trainers and clients | Solution: Integrated messaging and workout assignment system within dashboards",
+      "Problem: Difficulty tracking personal fitness progress | Solution: Interactive progress charts and logbooks for clients to monitor their journey",
+      "Problem: Inefficient session scheduling | Solution: Real-time calendar for trainers and clients to book and manage training sessions",
+      "Problem: Lack of clear business overview for owners | Solution: Admin dashboard with staff performance metrics and revenue analytics",
+      "Problem: One-size-fits-all workout plans | Solution: Tools for trainers to create and assign highly personalized workout and nutrition plans"
+    ],
+    outcomes: [
+      "Problem: High administrative overhead | Result: 45% reduction in manual data entry and membership management tasks",
+      "Problem: Low client engagement | Result: 30% increase in client session attendance and app daily usage",
+      "Problem: Opaque financial tracking | Result: Clear visibility into revenue streams and 15% growth in membership renewals",
+      "Problem: Scheduling conflicts | Result: Zero double-booking incidents since system implementation"
+    ]
+  },
+  {
     id: "w3",
     serviceId: "1",
     name: "Artisan Portfolio Gallery",
