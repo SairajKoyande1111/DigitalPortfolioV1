@@ -496,6 +496,57 @@ export const projects: Project[] = [
     technologies: ["YouTube", "Pinterest", "Shopify", "Klaviyo", "Buffer", "Sprout Social"],
     features: ["Video Content", "Influencer Marketing", "Cause Marketing", "Community Building", "Email Automation", "Content Calendar"],
     outcomes: ["5M video views", "300% increase in brand mentions", "45% increase in sales"]
+  },
+  {
+    id: "s5",
+    serviceId: "3",
+    name: "Soryouth Renewable Energy Infrastructure / Customer Management System",
+    shortDescription: "Complete Solar EPC infrastructure and customer management system.",
+    fullDescription: "Soryouth is a specialized CRM and project management platform designed for the renewable energy sector, specifically Solar EPC (Engineering, Procurement, and Construction) firms. It provides a unified interface for managing the entire customer lifecycle, from initial lead acquisition and automated proposal generation to site surveys with GPS tracking and post-installation service management (AMC). The system features real-time revenue analytics, installation performance monitoring, inventory tracking for solar components, and integrated communication tools, ensuring operational transparency and enhanced customer satisfaction.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_2.05.39_PM_1767342943907.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_2.05.39_PM_1767342943907.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.06_PM_1767343331120.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.19_PM_1767343342141.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.33_PM_1767343356268.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.12.41_PM_1767343363906.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.07_PM_1767343391385.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.18_PM_1767343401276.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.26_PM_1767343409400.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.34_PM_1767343416852.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.41_PM_1767343423954.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.51_PM_1767343433276.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.13.58_PM_1767343441270.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.06_PM_1767343448709.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.13_PM_1767343455926.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.21_PM_1767343464082.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.30_PM_1767343473343.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.38_PM_1767343480871.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.46_PM_1767343488868.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.14.55_PM_1767343497424.png",
+      "/attached_assets/Screenshot_2026-01-02_at_2.15.03_PM_1767343505916.png"
+    ],
+    clientName: "Soryouth Renewable Energy",
+    clientIndustry: "Renewable Energy / Solar EPC",
+    clientLocation: "Pune, India",
+    websiteUrl: "#",
+    duration: "12 weeks",
+    completedDate: "January 2026",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Recharts"],
+    features: [
+      "Real-time revenue & installation performance dashboards",
+      "Lead management with automated quotation & proposal generation",
+      "Site survey module with GPS tracking & documentation",
+      "Kanban-style project pipeline tracking",
+      "Inventory management for solar components",
+      "Automated invoicing & subsidy tracking system",
+      "Vendor & AMC (Annual Maintenance Contract) management"
+    ],
+    outcomes: [
+      "Problem: Manual site surveys were inefficient | Result: Digital survey module improved reporting speed by 50%",
+      "Problem: Lack of project visibility | Result: Real-time dashboards provided 100% transparency on installation progress",
+      "Problem: Complex subsidy and invoicing | Result: Automated system reduced payment processing time by 30%"
+    ]
   }
 ];
 
