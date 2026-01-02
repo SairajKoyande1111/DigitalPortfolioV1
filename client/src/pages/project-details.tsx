@@ -26,10 +26,9 @@ import {
   SiAmazon,
   SiAmazons3,
   SiMongodb,
-  SiTanstackquery,
   SiZod
 } from "react-icons/si";
-import { Shield, Layers, Database } from "lucide-react";
+import { Shield, Layers, Database, RefreshCw } from "lucide-react";
 
 const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "React": { icon: <SiReact className="w-7 h-7 text-[#61DAFB]" />, category: "Frontend" },
@@ -46,7 +45,7 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "Recharts": { icon: <CheckCircle2 className="w-7 h-7 text-blue-400" />, category: "Frontend" },
   "Framer Motion": { icon: <CheckCircle2 className="w-7 h-7 text-purple-400" />, category: "Frontend" },
   "PostgreSQL": { icon: <Database className="w-7 h-7 text-[#336791]" />, category: "Database" },
-  "TanStack Query": { icon: <SiTanstackquery className="w-7 h-7 text-[#FF4154]" />, category: "Frontend" },
+  "TanStack Query": { icon: <RefreshCw className="w-7 h-7 text-[#FF4154]" />, category: "Frontend" },
   "Zod": { icon: <SiZod className="w-7 h-7 text-[#3068B7]" />, category: "Backend" },
 };
 
