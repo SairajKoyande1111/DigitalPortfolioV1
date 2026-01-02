@@ -460,13 +460,13 @@ export const projects: Project[] = [
     completedDate: "January 2026",
     technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Recharts"],
     features: [
-      "Real-time revenue & installation performance dashboards",
-      "Lead management with automated quotation & proposal generation",
-      "Site survey module with GPS tracking & documentation",
-      "Kanban-style project pipeline tracking",
-      "Inventory management for solar components",
-      "Automated invoicing & subsidy tracking system",
-      "Vendor & AMC (Annual Maintenance Contract) management"
+      "Problem: Manual site surveys were inefficient | Solution: Site survey module with GPS tracking & documentation",
+      "Problem: Lack of project visibility | Solution: Real-time revenue & installation performance dashboards",
+      "Problem: Complex subsidy and invoicing | Solution: Automated invoicing & subsidy tracking system",
+      "Problem: Lead management was disorganized | Solution: Lead management with automated quotation & proposal generation",
+      "Problem: Inefficient project tracking | Solution: Kanban-style project pipeline tracking",
+      "Problem: Inventory management for solar components | Solution: Integrated inventory management for solar components",
+      "Problem: Vendor & AMC management was manual | Solution: Centralized Vendor & AMC management"
     ],
     outcomes: [
       "Problem: Manual site surveys were inefficient | Result: Digital survey module improved reporting speed by 50%",
