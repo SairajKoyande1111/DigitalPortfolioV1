@@ -325,6 +325,52 @@ export const projects: Project[] = [
       "Problem: Revenue leakage from unpaid invoices | Result: Payment tracking improved collection rate by 60%"
     ]
   },
+  {
+    id: "s3",
+    serviceId: "3",
+    name: "POS Restaurant Billing Software",
+    shortDescription: "A modern, efficient point-of-sale solution for restaurants featuring real-time order tracking, table management, and comprehensive analytics.",
+    fullDescription: "POS Restaurant Billing Software is a comprehensive management solution designed to streamline restaurant operations. The system features a robust point-of-sale interface for quick billing, real-time table management with visual status indicators, a Kitchen Display System (KDS) for efficient order preparation, and detailed inventory tracking. The application provides owners and managers with powerful analytics dashboards covering sales trends, item performance, and kitchen efficiency, enabling data-driven decisions to improve restaurant profitability.",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_12.53.40_PM_1767338624773.png",
+    galleryImages: [
+      "/attached_assets/Screenshot_2026-01-02_at_12.53.55_PM_1767338638330.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.57.57_PM_1767338880402.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.14_PM_1767338897246.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.44_PM_1767338926434.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.58.53_PM_1767338936696.png",
+      "/attached_assets/Screenshot_2026-01-02_at_12.59.25_PM_1767338969298.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.02_PM_1767339005133.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.32_PM_1767339035716.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.00.41_PM_1767339044630.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.01.48_PM_1767339111432.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.03_PM_1767339126168.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.13_PM_1767339135866.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.30_PM_1767339152973.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.02.39_PM_1767339165203.png",
+      "/attached_assets/Screenshot_2026-01-02_at_1.04.07_PM_1767339251912.png"
+    ],
+    clientName: "Foodies Delight",
+    clientIndustry: "Hospitality / F&B",
+    clientLocation: "Pune, India",
+    websiteUrl: "#",
+    duration: "8 weeks",
+    completedDate: "December 2024",
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "Recharts", "Framer Motion", "JWT Authentication", "AWS", "S3"],
+    features: [
+      "Problem: Slow manual billing processes | Solution: High-speed POS interface with quick-search and categories for rapid checkout",
+      "Problem: Disorganized table management | Solution: Real-time visual table map with status indicators (Available, Occupied, Preparing, Ready)",
+      "Problem: Communication gaps between front and back of house | Solution: Integrated Kitchen Display System (KDS) for instant order visibility and preparation tracking",
+      "Problem: Difficulty splitting bills among groups | Solution: Flexible bill-splitting functionality supporting equal or custom amounts and multiple payment methods",
+      "Problem: Inefficient inventory tracking | Solution: Comprehensive inventory management with low-stock alerts and purchase order generation",
+      "Problem: Lack of operational insights | Solution: Advanced analytics dashboards covering sales performance, peak hours, and staff efficiency"
+    ],
+    outcomes: [
+      "Problem: High peak-hour wait times | Result: 50% reduction in order-to-billing turnaround time",
+      "Problem: Inaccurate order preparation | Result: 95% decrease in order errors through digital KDS",
+      "Problem: Manual report generation effort | Result: Real-time visibility into revenue, growth (+18%), and customer retention (65%)",
+      "Problem: High inventory wastage | Result: 30% reduction in food wastage through better stock tracking"
+    ]
+  },
 
   // Digital Marketing Projects
   {

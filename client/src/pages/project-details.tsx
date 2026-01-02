@@ -41,6 +41,9 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "AWS": { icon: <SiAmazon className="w-7 h-7 text-[#FF9900]" />, category: "Deployment" },
   "S3": { icon: <SiAmazons3 className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
   "JWT Authentication": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
+  "Recharts": { icon: <CheckCircle2 className="w-7 h-7 text-blue-400" />, category: "Frontend" },
+  "Framer Motion": { icon: <CheckCircle2 className="w-7 h-7 text-purple-400" />, category: "Frontend" },
+  "PostgreSQL": { icon: <Database className="w-7 h-7 text-[#336791]" />, category: "Database" },
 };
 
 function ProjectDetailsSkeleton() {
