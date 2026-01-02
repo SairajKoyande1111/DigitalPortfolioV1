@@ -279,7 +279,7 @@ export const projects: Project[] = [
   {
     id: "s2",
     serviceId: "3",
-    name: "Mauli Car World - AutoShop Manager",
+    name: "Mauli Car World Automobile Management System",
     shortDescription: "Complete car parts & service management system with inventory tracking, customer management, service workflow, and comprehensive business analytics.",
     fullDescription: "AutoShop Manager is a full-stack web application designed specifically for automotive repair shops and car parts businesses. The system helps manage car parts inventory and stock levels, customer relationships and vehicle records, service workflow from inquiry to completion, employee management and HR operations, sales orders and payment tracking, purchase orders and supplier management, task assignments and leave management, and customer communications and feedback. The application provides a professional dashboard interface with role-based access control supporting Admin, Manager, Inventory Manager, Sales Executive, HR Manager, and Service Staff roles, ensuring each user only sees and manages what's relevant to their responsibilities.",
     imageUrl: "/attached_assets/Screenshot_2025-12-13_at_2.52.05_PM_1765617730192.png",
