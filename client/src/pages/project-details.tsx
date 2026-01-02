@@ -24,9 +24,10 @@ import {
   SiMysql,
   SiTailwindcss,
   SiAmazon,
-  SiAmazons3
+  SiAmazons3,
+  SiMongodb
 } from "react-icons/si";
-import { Shield, Layers } from "lucide-react";
+import { Shield, Layers, Database } from "lucide-react";
 
 const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "React": { icon: <SiReact className="w-7 h-7 text-[#61DAFB]" />, category: "Frontend" },
@@ -36,6 +37,7 @@ const techIconMap: Record<string, { icon: JSX.Element; category: string }> = {
   "Node.js": { icon: <SiNodedotjs className="w-7 h-7 text-[#339933]" />, category: "Backend" },
   "Express.js": { icon: <SiExpress className="w-7 h-7 text-gray-700" />, category: "Backend" },
   "MySQL": { icon: <SiMysql className="w-7 h-7 text-[#4479A1]" />, category: "Database" },
+  "MongoDB": { icon: <SiMongodb className="w-7 h-7 text-[#47A248]" />, category: "Database" },
   "AWS": { icon: <SiAmazon className="w-7 h-7 text-[#FF9900]" />, category: "Deployment" },
   "S3": { icon: <SiAmazons3 className="w-7 h-7 text-[#569A31]" />, category: "Deployment" },
   "JWT Authentication": { icon: <Shield className="w-7 h-7 text-green-600" />, category: "Security" },
@@ -457,6 +459,18 @@ export default function ProjectDetails() {
                     {project?.duration}
                   </p>
                 </div>
+
+                {project?.database && (
+                  <div className="space-y-1">
+                    <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
+                      Database
+                    </span>
+                    <p className="text-sm font-medium text-black dark:text-black flex items-center gap-1">
+                      <Database className="w-3 h-3" />
+                      {project.database}
+                    </p>
+                  </div>
+                )}
 
                 <div className="space-y-1">
                   <span className="text-xs text-black dark:text-black uppercase tracking-wider font-medium">
