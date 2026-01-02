@@ -178,20 +178,18 @@ export const projects: Project[] = [
     completedDate: "January 2026",
     technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Shadcn/ui", "Recharts", "Framer Motion", "JWT Authentication"],
     features: [
-      "Role-Based Dashboards: Dedicated interfaces for Admins, Trainers, and Clients with granular permissions.",
-      "Trainer Management: Comprehensive tools for managing trainer accounts, client assignments, and status tracking.",
-      "Video Library System: Advanced content management for training videos with categorization and viewing metrics.",
-      "Diet & Workout Plans: Highly customizable templates for low-carb, high-protein, and specialized nutrition plans.",
-      "Live Session Scheduling: Real-time booking system for individual and group training with automated reminders.",
-      "Business Analytics: Deep insights into revenue trends, client growth, and package distribution for management.",
-      "Habit Tracking: Integrated wellness monitoring for clients to log daily habits and fitness progress.",
-      "Multi-Role Authentication: Secure login system supporting diverse user types with distinct operational flows."
+      "Problem: Manual trainer and client management | Solution: Centralized dashboard for managing accounts and assignments",
+      "Problem: Inefficient workout and diet delivery | Solution: Customizable templates for personalized nutrition and training plans",
+      "Problem: Fragmented video content delivery | Solution: Integrated video library with categorization and easy client access",
+      "Problem: Scheduling conflicts for live sessions | Solution: Real-time booking calendar with automated reminders",
+      "Problem: Lack of business performance visibility | Solution: Comprehensive analytics dashboard with revenue and growth tracking",
+      "Problem: Difficult client progress monitoring | Solution: Built-in habit tracking and wellness logs for real-time updates"
     ],
     outcomes: [
-      "Operational Excellence: Eliminated manual scheduling errors and reduced administrative overhead by 50%.",
-      "Enhanced Engagement: Boosted client retention rates through interactive tracking and live session access.",
-      "Data-Driven Growth: Provided management with actionable insights resulting in 20% revenue optimization.",
-      "Scalable Infrastructure: Built a robust platform capable of managing multiple gym locations and thousands of users."
+      "Challenge: High administrative overhead | Result: 50% reduction in manual data entry and staff management tasks",
+      "Challenge: Low client retention | Result: 30% increase in client engagement through interactive tracking",
+      "Challenge: Opaque revenue streams | Result: Clear visibility into financial trends and package distribution",
+      "Challenge: Scheduling inefficiencies | Result: 100% elimination of double-booking incidents via real-time sync"
     ]
   },
   {
