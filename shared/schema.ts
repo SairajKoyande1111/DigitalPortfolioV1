@@ -377,7 +377,7 @@ export const projects: Project[] = [
     name: "AutoGamma Automobile Management System",
     shortDescription: "Advanced automobile workshop management system with spare parts inventory, service scheduling, and customer loyalty tracking.",
     fullDescription: "AutoGamma is a next-generation automobile management system designed to modernize traditional garage and spare parts operations. The system provides a unified platform for managing service appointments, technician productivity, and complex inventory across multiple locations. Key modules include a dynamic parts catalog with automated reordering, detailed vehicle service history, insurance claim tracking, and a customer portal for appointment booking and service updates. The application focuses on operational efficiency and customer retention through data-driven insights and automated communication workflows.",
-    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_2.11.16_PM_1767343276685.png",
+    imageUrl: "/attached_assets/Screenshot_2026-01-02_at_1.53.43_PM_1767342226760.png",
     galleryImages: [
       "/attached_assets/Screenshot_2026-01-02_at_1.53.43_PM_1767342226760.png",
       "/attached_assets/Screenshot_2026-01-02_at_1.54.12_PM_1767342255755.png",
