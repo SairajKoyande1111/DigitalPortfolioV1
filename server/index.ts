@@ -6,7 +6,11 @@ import path from "path";
 
 const app = express();
 
-app.use('/attached_assets', express.static(path.join(process.cwd(), 'attached_assets')));
+app.use('/attached_assets', express.static(path.join(process.cwd(), 'attached_assets'), {
+  setHeaders: (res) => {
+    res.set('Cache-Control', 'no-cache');
+  }
+}));
 const httpServer = createServer(app);
 
 declare module "http" {
