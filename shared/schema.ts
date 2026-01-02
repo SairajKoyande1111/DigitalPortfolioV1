@@ -460,13 +460,13 @@ export const projects: Project[] = [
     completedDate: "January 2026",
     technologies: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Recharts"],
     features: [
-      "Problem: Manual site surveys were inefficient | Solution: Site survey module with GPS tracking & documentation",
-      "Problem: Lack of project visibility | Solution: Real-time revenue & installation performance dashboards",
+      "Problem: Solar installations lack real-time visibility | Solution: Real-time revenue & installation performance dashboards",
+      "Problem: Manual proposal generation is time-consuming | Solution: Lead management with automated quotation & proposal generation",
+      "Problem: Inaccurate site survey data | Solution: Site survey module with GPS tracking & documentation",
+      "Problem: Disorganized project workflows | Solution: Kanban-style project pipeline tracking",
+      "Problem: Inefficient solar component tracking | Solution: Inventory management for solar components",
       "Problem: Complex subsidy and invoicing | Solution: Automated invoicing & subsidy tracking system",
-      "Problem: Lead management was disorganized | Solution: Lead management with automated quotation & proposal generation",
-      "Problem: Inefficient project tracking | Solution: Kanban-style project pipeline tracking",
-      "Problem: Inventory management for solar components | Solution: Integrated inventory management for solar components",
-      "Problem: Vendor & AMC management was manual | Solution: Centralized Vendor & AMC management"
+      "Problem: Manual vendor and contract tracking | Solution: Vendor & AMC (Annual Maintenance Contract) management"
     ],
     outcomes: [
       "Problem: Manual site surveys were inefficient | Result: Digital survey module improved reporting speed by 50%",
