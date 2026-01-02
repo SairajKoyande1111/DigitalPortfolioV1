@@ -308,7 +308,7 @@ export const projects: Project[] = [
     websiteUrl: "#",
     duration: "6 weeks",
     completedDate: "December 2024",
-    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod"],
+    technologies: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn/ui", "TanStack Query", "Zod", "JWT Authentication", "AWS", "S3"],
     features: [
       "Problem: No centralized inventory tracking | Solution: Real-time product catalog with stock levels, low stock alerts, and warehouse location tracking",
       "Problem: Customer vehicle records were scattered | Solution: Complete customer database with multiple vehicle registration and service history",
